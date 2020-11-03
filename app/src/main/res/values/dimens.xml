@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="button_height_small">40dp</dimen>
+    <dimen name="button_height_middle">50dp</dimen>
+    <dimen name="button_height_big">60dp</dimen>
+
+
+    <dimen name="H1">32dp</dimen>
+    <dimen name="H2">26dp</dimen>
+    <dimen name="H3">20dp</dimen>
+    <dimen name="H4">18dp</dimen>
+    <dimen name="S1">17dp</dimen>
+    <dimen name="S2">16dp</dimen>
+    <dimen name="B1">15dp</dimen>
+    <dimen name="B2">14dp</dimen>
+    <dimen name="C1">13dp</dimen>
+    <dimen name="C2">12dp</dimen>
+    <dimen name="L1">11dp</dimen>
+    <dimen name="L2">10dp</dimen>
+
+
+    
+</resources>

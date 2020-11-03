@@ -1,0 +1,116 @@
+package io.motoo.www.login
+
+import android.content.ContentValues.TAG
+import android.os.Bundle
+import android.util.Log
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.CheckBox
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import io.motoo.www.R
+import kotlinx.android.synthetic.main.fragment_terms.view.*
+
+class TermsFragment : Fragment(), View.OnClickListener {
+
+    lateinit var v: View
+    var checkBoxCount = 0
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+
+        v = inflater.inflate(R.layout.fragment_terms, container, false)
+        v.checkbox_all.setOnCheckedChangeListener { compoundButton, b ->
+            checkBoxAllListener(b)
+        }
+
+
+        v.checkbox_service.setOnClickListener(this)
+        v.checkbox_privacy.setOnClickListener(this)
+        v.checkbox_marketing.setOnClickListener(this)
+        v.checkbox_marketing_privacy.setOnClickListener(this)
+
+        v.button_next.setOnClickListener {
+            Log.d(TAG, "onCreateView: 버튼 클릭")
+            moveToNext()
+        }
+
+
+        return v
+    }
+
+    private fun checkBoxAllListener(boolean: Boolean) {
+        if (boolean) {
+            v.checkbox_service.isChecked = true
+            v.checkbox_privacy.isChecked = true
+            v.checkbox_marketing.isChecked = true
+            v.checkbox_marketing_privacy.isChecked = true
+
+            nextButtonOpen()
+
+        } else {
+
+            v.checkbox_service.isChecked = false
+            v.checkbox_privacy.isChecked = false
+            v.checkbox_marketing.isChecked = false
+            v.checkbox_marketing_privacy.isChecked = false
+
+            nextButtonClose()
+
+        }
+
+    }
+
+    private fun moveToNext() {
+        if (v.checkbox_service.isChecked && v.checkbox_privacy.isChecked) {
+            findNavController().navigate(R.id.action_termsFragment_to_signUpFragment)
+        } else {
+            Toast.makeText(activity, "필수 약관에 동의해주시기 바랍니다.", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    override fun onClick(p0: View?) {
+        Log.d(TAG, "onClick: 버튼 뷰클릭")
+        when (p0) {
+            v.checkbox_service -> checkBoxControl()
+            v.checkbox_privacy -> checkBoxControl()
+            v.checkbox_marketing -> checkBoxControl()
+            v.checkbox_marketing_privacy -> checkBoxControl()
+
+        }
+    }
+
+    private fun nextButtonOpen() {
+        v.button_next.apply {
+            setTextColor(resources.getColor(R.color.white, null))
+            setBackgroundColor(resources.getColor(R.color.deep_orange, null))
+            isEnabled = true
+        }
+    }
+
+    private fun nextButtonClose() {
+        v.button_next.apply {
+            setTextColor(resources.getColor(R.color.black, null))
+            setBackgroundColor(resources.getColor(R.color.soft_gray, null))
+            isEnabled = false
+        }
+    }
+
+    private fun checkBoxControl() {
+        Log.d(TAG, "checkBoxControl: 진입")
+        if (v.checkbox_service.isChecked && v.checkbox_privacy.isChecked && v.checkbox_marketing.isChecked && v.checkbox_marketing_privacy.isChecked) {
+            nextButtonOpen()
+        } else if (v.checkbox_service.isChecked && v.checkbox_privacy.isChecked) {
+            nextButtonOpen()
+        } else {
+            Log.d(TAG, "checkBoxControl: 버튼 클로즈")
+            nextButtonClose()
+        }
+    }
+
+
+}

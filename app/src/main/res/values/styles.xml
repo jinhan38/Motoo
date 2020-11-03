@@ -1,0 +1,32 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryDark">@color/purple_700</item>
+        <item name="colorAccent">@color/basic_orange</item>
+        <!-- No Title Bar-->
+        <!-- No Title Bar-->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@color/basic_background</item>
+        <!--        statusBar의 배경색깔-->
+        <item name="android:windowLightStatusBar">true</item>
+        <!--        false로 하면 statusBar의 텍스트들이 하얀색이 됨-->
+        <!--        true면 회색? 검은색?이 됨-->
+        <!--        <item name="android:windowBackground">@color/soft_gray</item>-->
+        <!--        <item name="android:windowBackground">@drawable/start_splash</item>-->
+        <!--        <item name="android:navigationBarColor">@color/navigation_bar_color</item>-->
+        <!--        아래 홈버튼이랑 뒤로가기 버튼의 배경색 조절-->
+    </style>
+
+
+<!--    EditText 밑줄, 커서 컬러 변경-->
+    <style name="EditTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorAccent">@color/basic_orange</item>
+        <item name="colorControlNormal">@color/middle_gray</item>
+    </style>
+
+</resources>

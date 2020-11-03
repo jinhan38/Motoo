@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sv_sign_up"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true"
+    tools:context=".login.SignUpFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textColor="@color/basic_orange"
+            android:textSize="@dimen/H1"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/guideline"
+            app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="@+id/textView1"
+            app:layout_constraintGuide_percent="0.10"
+            app:layout_constraintStart_toStartOf="@+id/textView1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.07" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_up"
+            android:textColor="@color/black"
+            android:textSize="@dimen/H1"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/textView1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="20dp"
+            app:layout_constraintGuide_percent="0.9" />
+
+        <EditText
+            android:id="@+id/sign_up_email_editText"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_height_small"
+            android:layout_marginTop="120dp"
+            android:ems="10"
+            android:hint="이메일"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:paddingHorizontal="10dp"
+            android:textSize="@dimen/B2"
+            android:theme="@style/EditTheme"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toTopOf="@+id/guideline2"
+            tools:background="@color/soft_gray" />
+
+
+        <EditText
+            android:id="@+id/sign_up_password_editText"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_height_small"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:hint="비밀번호"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:paddingHorizontal="10dp"
+            android:textSize="@dimen/B2"
+            android:theme="@style/EditTheme"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/sign_up_email_editText"
+            tools:background="@color/soft_gray" />
+
+        <EditText
+            android:id="@+id/sign_up_password_confirm_editText"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_height_small"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:hint="비밀번호 확인"
+            android:inputType="textPersonName"
+            android:maxLines="1"
+            android:paddingHorizontal="10dp"
+            android:textSize="@dimen/B2"
+            android:theme="@style/EditTheme"
+            app:layout_constraintEnd_toEndOf="@+id/guideline3"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/sign_up_password_editText"
+            tools:background="@color/soft_gray" />
+
+
+        <EditText
+            android:id="@+id/sign_up_name_editText"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_height_small"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:hint="이름"
+            android:inputType="textPersonName"
+            android:maxLines="1"
+            android:paddingHorizontal="10dp"
+            android:textSize="@dimen/B2"
+            android:theme="@style/EditTheme"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/sign_up_password_confirm_editText"
+            tools:background="@color/soft_gray" />
+
+
+        <Button
+            android:id="@+id/next_button"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_height_small"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/round_gray_20dp"
+            android:text="@string/next"
+            android:textColor="@color/white"
+            android:theme="@style/EditTheme"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/sign_up_name_editText" />
+
+        <TextView
+            android:id="@+id/move_to_email_login_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/start_by_email"
+            android:textColor="@color/black"
+            android:textSize="@dimen/B2"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/next_button" />
+
+        <Button
+            android:id="@+id/start_kakao_button"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_height_small"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/round_yellow_20dp"
+            android:drawableLeft="@drawable/ic_kakao_30"
+            android:paddingHorizontal="30dp"
+            android:text="@string/start_by_kakao"
+            android:textColor="@color/black"
+            android:textSize="@dimen/B2"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/move_to_email_login_button" />
+
+        <Button
+            android:id="@+id/start_goolge_button"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_height_small"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="50dp"
+            android:background="@drawable/round_white_20dp"
+            android:drawableLeft="@drawable/ic_google_26"
+            android:paddingHorizontal="30dp"
+            android:text="@string/start_by_google"
+            android:textColor="@color/black"
+            android:textSize="@dimen/B2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/start_kakao_button" />
+
+        <TextView
+            android:id="@+id/email_error_text_sign_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이메일을 입력해주세요"
+            android:textColor="@color/basic_orange"
+            android:textSize="@dimen/C2"
+            android:visibility="visible"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/sign_up_email_editText"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/password_error_text_sign_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="비밀번호를 입력해주세요"
+            android:textColor="@color/basic_orange"
+            android:textSize="@dimen/C2"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/sign_up_password_editText"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/name_error_text_sign_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="비밀번호를 확인해주세요"
+            android:textColor="@color/basic_orange"
+            android:textSize="@dimen/C2"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/sign_up_password_confirm_editText"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이름을 입력해주세요"
+            android:textColor="@color/basic_orange"
+            android:textSize="@dimen/C2"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/sign_up_name_editText"
+            tools:visibility="visible" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

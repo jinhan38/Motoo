@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">motoo</string>
+    <string name="sign_up">회원가입</string>
+    <string name="next">다음</string>
+    <string name="start_by_kakao">카카오로 시작하기</string>
+    <string name="start_by_google">구글로 시작하기</string>
+    <string name="start_by_email">이메일로 시작하기</string>
+    <string name="previousStep">이전단계</string>
+    <string name="terms_explain">전체동의는 선택목적에 대한 동의를 포함하고 있으며,
+        선택목적에 대한 동의를 거부해도 서비스 이용이 가능합니다.</string>
+    <string name="terms_service">[필수] 서비스 이용 약관</string>
+    <string name="terms_privacy">[필수] 개인정보 수집 동의</string>
+    <string name="terms_marketing">[선택] 마케팅 정보 수신 동의</string>
+    <string name="terms_marketing_privacy">[선택] 마케팅 개인정보 수신 동의</string>
+
+</resources>
