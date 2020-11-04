@@ -5,13 +5,13 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryDark">@color/purple_700</item>
-        <item name="colorAccent">@color/basic_orange</item>
+        <item name="colorAccent">@color/brand</item>
         <!-- No Title Bar-->
         <!-- No Title Bar-->
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-        <item name="android:statusBarColor">@color/basic_background</item>
+        <item name="android:statusBarColor">@color/white</item>
         <!--        statusBar의 배경색깔-->
         <item name="android:windowLightStatusBar">true</item>
         <!--        false로 하면 statusBar의 텍스트들이 하얀색이 됨-->
@@ -20,13 +20,34 @@
         <!--        <item name="android:windowBackground">@drawable/start_splash</item>-->
         <!--        <item name="android:navigationBarColor">@color/navigation_bar_color</item>-->
         <!--        아래 홈버튼이랑 뒤로가기 버튼의 배경색 조절-->
+
+    </style>
+    <!-- Base application theme. -->
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryDark">@color/purple_700</item>
+        <item name="colorAccent">@color/brand</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@color/brand</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowBackground">@drawable/splash</item>
+
     </style>
 
 
-<!--    EditText 밑줄, 커서 컬러 변경-->
+    <!--    EditText 밑줄, 커서 컬러 변경-->
     <style name="EditTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorAccent">@color/basic_orange</item>
-        <item name="colorControlNormal">@color/middle_gray</item>
+        <item name="colorAccent">@color/brand</item>
+<!--        <item name="colorControlNormal">@color/middle_gray</item>-->
+    </style>
+
+    <style name="CustomActivityAnimation" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item>
+        <item name="android:activityCloseEnterAnimation">@anim/slide_out_left</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_in_right</item>
     </style>
 
 </resources>

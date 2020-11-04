@@ -1,13 +1,14 @@
-package io.motoo.www.login
+package io.motoo.www.signUp
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import io.motoo.www.R
+import io.motoo.www.login.LoginFragment
 import io.motoo.www.others.KeyboardVisibilityUtils
+import io.motoo.www.others.replaceFragment
 import kotlinx.android.synthetic.main.fragment_sign_up.*
 
 
@@ -28,7 +29,7 @@ class SignUpFragment : Fragment() {
 
 
         move_to_email_login_button.setOnClickListener {
-            findNavController().navigate(R.id.action_signUpFragment_to_loginFragment)
+            LoginFragment().replaceFragment(R.id.fragment, requireActivity())
         }
     }
 }

@@ -1,4 +1,4 @@
-package io.motoo.www.login
+package io.motoo.www.signUp
 
 import android.content.ContentValues.TAG
 import android.os.Bundle
@@ -6,11 +6,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.CheckBox
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import io.motoo.www.R
+import io.motoo.www.others.replaceFragment
 import kotlinx.android.synthetic.main.fragment_terms.view.*
 
 class TermsFragment : Fragment(), View.OnClickListener {
@@ -66,8 +65,12 @@ class TermsFragment : Fragment(), View.OnClickListener {
     }
 
     private fun moveToNext() {
+
+
         if (v.checkbox_service.isChecked && v.checkbox_privacy.isChecked) {
-            findNavController().navigate(R.id.action_termsFragment_to_signUpFragment)
+
+            SignUpFragment().replaceFragment(R.id.fragment, requireActivity())
+            
         } else {
             Toast.makeText(activity, "필수 약관에 동의해주시기 바랍니다.", Toast.LENGTH_SHORT).show()
         }
