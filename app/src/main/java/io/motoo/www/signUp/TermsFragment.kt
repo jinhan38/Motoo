@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import io.motoo.www.R
@@ -21,6 +22,7 @@ class TermsFragment : Fragment(), View.OnClickListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        activity?.window!!.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
 
         v = inflater.inflate(R.layout.fragment_terms, container, false)
         v.checkbox_all.setOnCheckedChangeListener { compoundButton, b ->
@@ -89,15 +91,15 @@ class TermsFragment : Fragment(), View.OnClickListener {
 
     private fun nextButtonOpen() {
         v.button_next.apply {
-            setTextColor(resources.getColor(R.color.white, null))
-            setBackgroundColor(resources.getColor(R.color.deep_orange, null))
+//            setTextColor(resources.getColor(R.color.white, null))
+            setBackgroundColor(resources.getColor(R.color.brand, null))
             isEnabled = true
         }
     }
 
     private fun nextButtonClose() {
         v.button_next.apply {
-            setTextColor(resources.getColor(R.color.black, null))
+//            setTextColor(resources.getColor(R.color.black, null))
             setBackgroundColor(resources.getColor(R.color.soft_gray, null))
             isEnabled = false
         }

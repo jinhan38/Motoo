@@ -6,7 +6,7 @@
 
 
     <dimen name="H1">32dp</dimen>
-    <dimen name="H2">26dp</dimen>
+    <dimen name="H2">24dp</dimen>
     <dimen name="H3">20dp</dimen>
     <dimen name="H4">18dp</dimen>
     <dimen name="S1">17dp</dimen>

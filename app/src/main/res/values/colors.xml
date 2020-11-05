@@ -21,10 +21,12 @@
     <color name="brand">#403fff</color>
 
 
-    <color name="gray_100">#f1f1f1</color>
+    <color name="border_light">#f1f1f1</color>
     <color name="gray_300">#dad9e2</color>
     <color name="gray_500">#4b5461</color>
     <color name="kakao">#fae300</color>
     <color name="faceBook">#25479b</color>
+    <color name="border">#e1e1e1</color>
+    <color name="error">#e64736</color>
 
 </resources>

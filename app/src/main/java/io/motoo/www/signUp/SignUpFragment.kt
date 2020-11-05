@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import androidx.fragment.app.Fragment
 import io.motoo.www.R
 import io.motoo.www.login.LoginFragment
@@ -20,6 +21,7 @@ class SignUpFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        activity?.window!!.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)
 
         return inflater.inflate(R.layout.fragment_sign_up, container, false)
     }
@@ -28,8 +30,8 @@ class SignUpFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        move_to_email_login_button.setOnClickListener {
-            LoginFragment().replaceFragment(R.id.fragment, requireActivity())
+        next.setOnClickListener {
+            Verification().replaceFragment(R.id.fragment, requireActivity())
         }
     }
 }

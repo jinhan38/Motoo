@@ -5,17 +5,35 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/termsFragment">
     <fragment
-        android:id="@+id/signUpFragment"
-        android:name="io.motoo.www.signUp.SignUpFragment"
-        android:label="fragment_sign_up"
-        tools:layout="@layout/fragment_sign_up" />
-    <fragment
         android:id="@+id/termsFragment"
         android:name="io.motoo.www.signUp.TermsFragment"
         android:label="fragment_terms"
-        tools:layout="@layout/fragment_terms" >
+        tools:layout="@layout/fragment_terms">
         <action
             android:id="@+id/action_termsFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="io.motoo.www.signUp.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up">
+        <action
+            android:id="@+id/action_signUpFragment_to_verification"
+            app:destination="@id/verification" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFinish"
+        android:name="io.motoo.www.signUp.SignUpFinish"
+        android:label="fragment_sign_up_finish"
+        tools:layout="@layout/fragment_sign_up_finish" />
+    <fragment
+        android:id="@+id/verification"
+        android:name="io.motoo.www.signUp.Verification"
+        android:label="fragment_verification"
+        tools:layout="@layout/fragment_verification">
+        <action
+            android:id="@+id/action_verification_to_signUpFinish"
+            app:destination="@id/signUpFinish" />
     </fragment>
 </navigation>
