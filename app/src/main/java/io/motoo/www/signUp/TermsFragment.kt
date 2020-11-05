@@ -10,8 +10,12 @@ import android.view.WindowManager
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import io.motoo.www.R
+import io.motoo.www.customInterface.BackButton
 import io.motoo.www.others.replaceFragment
+import kotlinx.android.synthetic.main.fragment_sign_up.*
+import kotlinx.android.synthetic.main.fragment_sign_up.view.*
 import kotlinx.android.synthetic.main.fragment_terms.view.*
+import kotlinx.android.synthetic.main.fragment_terms.view.back_button
 
 class TermsFragment : Fragment(), View.OnClickListener {
 
@@ -35,11 +39,16 @@ class TermsFragment : Fragment(), View.OnClickListener {
         v.checkbox_marketing.setOnClickListener(this)
         v.checkbox_marketing_privacy.setOnClickListener(this)
 
+
         v.button_next.setOnClickListener {
             Log.d(TAG, "onCreateView: 버튼 클릭")
             moveToNext()
         }
 
+
+        v.back_button.setOnClickListener {
+            activity?.onBackPressed()
+        }
 
         return v
     }
