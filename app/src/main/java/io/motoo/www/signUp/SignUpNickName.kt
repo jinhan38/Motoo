@@ -7,12 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import io.motoo.www.R
-import io.motoo.www.customInterface.BackButton
-import io.motoo.www.others.replaceFragment
-import kotlinx.android.synthetic.main.fragment_sign_up.*
-import kotlinx.android.synthetic.main.fragment_sign_up.view.*
+import kotlinx.android.synthetic.main.fragment_sign_up_nickname.view.*
 
-class SignUpFinish : Fragment() {
+
+class SignUpNickName : Fragment() {
 
     lateinit var v: View
     override fun onCreateView(
@@ -21,7 +19,7 @@ class SignUpFinish : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         activity?.window!!.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)
-        v = inflater.inflate(R.layout.fragment_sign_up_finish, container, false)
+        v = inflater.inflate(R.layout.fragment_sign_up_nickname, container, false)
 
         v.back_button.setOnClickListener {
             activity?.onBackPressed()

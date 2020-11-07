@@ -15,5 +15,26 @@
     <string name="terms_privacy">[필수] 개인정보 수집 동의</string>
     <string name="terms_marketing">[선택] 마케팅 정보 수신 동의</string>
     <string name="terms_marketing_privacy">[선택] 마케팅 개인정보 수신 동의</string>
-    
+    <string-array name="planets_array">
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+    </string-array>
+    <string name="title_activity_bottom_navigation">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="game">경기</string>
+    <string name="market">마켓</string>
+    <string name="portfolio">포폴</string>
+    <string name="myPage">마이</string>
+    <string name="title_activity_bottom">MainActivity</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/navigation_game"
+        android:icon="@drawable/ic_game_unclicked"
+        android:title="@string/game" />
+
+    <item
+        android:id="@+id/navigation_market"
+        android:icon="@drawable/ic_market_unclicked"
+        android:title="@string/market" />
+
+    <item
+        android:id="@+id/navigation_portfolio"
+        android:icon="@drawable/ic_portfolio_unclicked"
+        android:title="@string/portfolio" />
+
+    <item
+        android:id="@+id/navigation_mypage"
+        android:icon="@drawable/ic_mypage_unclicked"
+        android:title="@string/myPage" />
+
+</menu>

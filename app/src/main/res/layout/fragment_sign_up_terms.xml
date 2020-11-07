@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:fitsSystemWindows="true"
-    tools:context=".signUp.TermsFragment">
+    tools:context=".signUp.SignUpTerms">
 
 
     <FrameLayout
@@ -14,7 +14,6 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_alignParentTop="true">
-
 
 
         <ImageView
@@ -29,6 +28,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/textView2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/textView2" />
+
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
@@ -60,7 +60,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="25"
-                android:background="@color/brand" />
+                android:background="@color/primary_blue" />
 
             <View
                 android:layout_width="0dp"
@@ -87,7 +87,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginHorizontal="32dp"
-            android:background="@drawable/back_round_4_stroke_stroke"
+            android:background="@drawable/bg_round_4_stroke_stroke"
             android:orientation="vertical"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -97,28 +97,31 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                <include
+                    android:id="@+id/include"
+                    layout="@layout/activity_motoo_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
                     android:layout_marginLeft="24dp"
                     android:layout_marginTop="24dp"
-                    android:background="@mipmap/ic_launcher"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
 
                 <TextView
                     android:id="@+id/textView6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
+                    android:fontFamily="@font/apple_sd_gothic_neo_b"
+                    android:gravity="center_vertical"
                     android:text="모투(motoo)"
                     android:textColor="#424867"
                     android:textSize="16sp"
                     android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView"
-                    app:layout_constraintStart_toEndOf="@+id/imageView"
-                    app:layout_constraintTop_toTopOf="@+id/imageView" />
+                    app:layout_constraintBottom_toBottomOf="@+id/include"
+                    app:layout_constraintStart_toEndOf="@+id/include"
+                    app:layout_constraintTop_toTopOf="@+id/include" />
 
                 <View
                     android:id="@+id/view"
@@ -137,6 +140,7 @@
                     android:layout_marginHorizontal="24dp"
                     android:layout_marginTop="15dp"
                     android:button="@drawable/checkbox_custom"
+                    android:gravity="center_vertical"
                     android:paddingLeft="10dp"
                     android:text="전체 동의하기"
                     android:textColor="#171d29"
@@ -225,7 +229,8 @@
                     android:id="@+id/button_next"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:background="@color/gray_300"
+                    android:layout_marginTop="26dp"
+                    android:background="@color/border_dark"
                     android:enabled="false"
                     android:gravity="center"
                     android:lineSpacingExtra="-2sp"
@@ -234,7 +239,6 @@
                     android:textSize="14sp"
                     android:textStyle="bold"
                     android:visibility="visible"
-                    android:layout_marginTop="26dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/checkbox_marketing_privacy" />

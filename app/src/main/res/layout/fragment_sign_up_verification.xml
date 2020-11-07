@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".signUp.Verification">
+    tools:context=".signUp.SignUpVerification">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -65,19 +65,19 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="25"
-                    android:background="@color/brand" />
+                    android:background="@color/primary_blue" />
 
                 <View
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="25"
-                    android:background="@color/brand" />
+                    android:background="@color/primary_blue" />
 
                 <View
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="25"
-                    android:background="@color/brand" />
+                    android:background="@color/primary_blue" />
 
                 <View
                     android:layout_width="0dp"
@@ -144,35 +144,31 @@
 
                     <FrameLayout
                         android:layout_width="0dp"
+                        android:paddingRight="10dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="25">
+                        android:layout_weight="30">
 
                         <EditText
-                            android:layout_width="60dp"
+                            android:layout_width="match_parent"
                             android:layout_height="60dp"
-                            android:hint="82"
-                            android:lineSpacingExtra="6sp"
-                            android:textColor="#36364b"
-                            android:textSize="18sp"
-                            android:textStyle="bold"
                             tools:background="#fff" />
 
                         <Spinner
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:background="@android:color/transparent" />
+                            android:id="@+id/spinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp" />
 
                     </FrameLayout>
 
                     <FrameLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="75">
+                        android:layout_weight="70">
 
                         <EditText
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:hint="01030890122"
+                            android:hint="‘-‘없이 입력"
                             android:lineSpacingExtra="6sp"
                             android:textColor="#36364b"
                             android:textSize="18sp"
@@ -184,7 +180,8 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="right|center_vertical"
                             android:text="인증번호"
-                            android:textColor="#a5a9b0"
+                            android:fontFamily="@font/noto_sans_kr_bold"
+                            android:textColor="@color/primary_blue"
                             android:textSize="12sp"
                             android:textStyle="bold" />
                     </FrameLayout>
@@ -211,7 +208,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="right|center_vertical"
                         android:text="180초"
-                        android:textColor="@color/brand"
+                        android:textColor="@color/primary_blue"
                         android:textSize="12sp"
                         android:textStyle="bold" />
 
@@ -222,7 +219,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="51dp"
                     android:layout_marginBottom="50dp"
                     android:background="@drawable/bg_round_brand_4dp"
                     android:lineSpacingExtra="-2sp"

@@ -10,14 +10,10 @@ import android.view.WindowManager
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import io.motoo.www.R
-import io.motoo.www.customInterface.BackButton
 import io.motoo.www.others.replaceFragment
-import kotlinx.android.synthetic.main.fragment_sign_up.*
-import kotlinx.android.synthetic.main.fragment_sign_up.view.*
-import kotlinx.android.synthetic.main.fragment_terms.view.*
-import kotlinx.android.synthetic.main.fragment_terms.view.back_button
+import kotlinx.android.synthetic.main.fragment_sign_up_terms.view.*
 
-class TermsFragment : Fragment(), View.OnClickListener {
+class SignUpTerms : Fragment(), View.OnClickListener {
 
     lateinit var v: View
     var checkBoxCount = 0
@@ -28,7 +24,7 @@ class TermsFragment : Fragment(), View.OnClickListener {
     ): View? {
         activity?.window!!.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
 
-        v = inflater.inflate(R.layout.fragment_terms, container, false)
+        v = inflater.inflate(R.layout.fragment_sign_up_terms, container, false)
         v.checkbox_all.setOnCheckedChangeListener { compoundButton, b ->
             checkBoxAllListener(b)
         }
@@ -80,7 +76,7 @@ class TermsFragment : Fragment(), View.OnClickListener {
 
         if (v.checkbox_service.isChecked && v.checkbox_privacy.isChecked) {
 
-            SignUpFragment().replaceFragment(R.id.fragment, requireActivity())
+            SignUpProfile().replaceFragment(R.id.fragment, requireActivity())
             
         } else {
             Toast.makeText(activity, "필수 약관에 동의해주시기 바랍니다.", Toast.LENGTH_SHORT).show()
@@ -101,7 +97,7 @@ class TermsFragment : Fragment(), View.OnClickListener {
     private fun nextButtonOpen() {
         v.button_next.apply {
 //            setTextColor(resources.getColor(R.color.white, null))
-            setBackgroundColor(resources.getColor(R.color.brand, null))
+            setBackgroundColor(resources.getColor(R.color.primary_blue, null))
             isEnabled = true
         }
     }

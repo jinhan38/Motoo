@@ -7,7 +7,7 @@
     android:background="@color/white"
     android:fillViewport="true"
     android:fitsSystemWindows="true"
-    tools:context=".signUp.SignUpFinish">
+    tools:context=".signUp.SignUpNickName">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -64,25 +64,25 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="25"
-                android:background="@color/brand" />
+                android:background="@color/primary_blue" />
 
             <View
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="25"
-                android:background="@color/brand" />
+                android:background="@color/primary_blue" />
 
             <View
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="25"
-                android:background="@color/brand" />
+                android:background="@color/primary_blue" />
 
             <View
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="25"
-                android:background="@color/brand" />
+                android:background="@color/primary_blue" />
 
         </LinearLayout>
 
@@ -132,7 +132,7 @@
                 android:drawablePadding="5dp"
                 android:gravity="center_vertical"
                 android:text="이미 존재하는 이메일입니다."
-                android:textColor="@color/error"
+                android:textColor="@color/red"
                 android:textSize="12sp"
                 android:textStyle="normal"
                 app:layout_constraintEnd_toEndOf="parent"

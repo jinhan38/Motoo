@@ -7,6 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="white_30">#4DFFFFFF</color>
     <color name="yellow">#FFF500</color>
     <color name="soft_orange">#FFCC42</color>
     <color name="basic_orange">#FFBE0F</color>
@@ -16,17 +17,30 @@
     <color name="soft_gray">#eeeeee</color>
     <color name="middle_gray">#D6D3D3</color>
     <color name="deep_gray">#716E6E</color>
-    <color name="basic_background">#FAFAFA</color>
 
-    <color name="brand">#403fff</color>
+    <color name="primary_blue">#403fff</color>
+    <color name="primary_orange">#FFBD00</color>
 
+    <color name="font_dark">#36364B</color>
+    <color name="font_normal">#36364B</color>
+    <color name="font_light">#A5A9B0</color>
 
+    <color name="border_dark">#e1e1e1</color>
     <color name="border_light">#f1f1f1</color>
-    <color name="gray_300">#dad9e2</color>
+
+    <color name="bg_white">#fff</color>
+    <color name="bg_basic">#FAFAFA</color>
+    
+
+    <color name="btn_inactivity">#dad9e2</color>
+    <color name="btn_cancel">#656670</color>
+    <color name="btn_sales">#00c1ff</color>
+    <color name="red">#e64736</color>
+    
     <color name="gray_500">#4b5461</color>
     <color name="kakao">#fae300</color>
     <color name="faceBook">#25479b</color>
-    <color name="border">#e1e1e1</color>
-    <color name="error">#e64736</color>
+
+
 
 </resources>

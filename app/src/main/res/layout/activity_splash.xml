@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/brand"
+    android:background="@color/primary_blue"
     tools:context=".activity.SplashActivity">
 
     <TextView
@@ -15,6 +15,7 @@
         android:letterSpacing="-0.04"
         android:lineSpacingExtra="-5sp"
         android:text="MO\nTOO"
+        android:fontFamily="@font/lemonmilk_bold"
         android:textColor="@color/white"
         android:textSize="46sp"
         android:textStyle="bold"

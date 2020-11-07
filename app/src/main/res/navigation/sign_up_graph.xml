@@ -6,18 +6,18 @@
     app:startDestination="@id/termsFragment">
     <fragment
         android:id="@+id/termsFragment"
-        android:name="io.motoo.www.signUp.TermsFragment"
+        android:name="io.motoo.www.signUp.SignUpTerms"
         android:label="fragment_terms"
-        tools:layout="@layout/fragment_terms">
+        tools:layout="@layout/fragment_sign_up_terms">
         <action
             android:id="@+id/action_termsFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="io.motoo.www.signUp.SignUpFragment"
+        android:name="io.motoo.www.signUp.SignUpProfile"
         android:label="fragment_sign_up"
-        tools:layout="@layout/fragment_sign_up">
+        tools:layout="@layout/fragment_sign_up_profile">
         <action
             android:id="@+id/action_signUpFragment_to_verification"
             app:destination="@id/verification" />
@@ -27,18 +27,18 @@
     </fragment>
     <fragment
         android:id="@+id/signUpFinish"
-        android:name="io.motoo.www.signUp.SignUpFinish"
+        android:name="io.motoo.www.signUp.SignUpNickName"
         android:label="fragment_sign_up_finish"
-        tools:layout="@layout/fragment_sign_up_finish" >
+        tools:layout="@layout/fragment_sign_up_nickname" >
         <action
             android:id="@+id/action_signUpFinish_to_verification"
             app:destination="@id/verification" />
     </fragment>
     <fragment
         android:id="@+id/verification"
-        android:name="io.motoo.www.signUp.Verification"
+        android:name="io.motoo.www.signUp.SignUpVerification"
         android:label="fragment_verification"
-        tools:layout="@layout/fragment_verification">
+        tools:layout="@layout/fragment_sign_up_verification">
         <action
             android:id="@+id/action_verification_to_signUpFinish"
             app:destination="@id/signUpFinish" />

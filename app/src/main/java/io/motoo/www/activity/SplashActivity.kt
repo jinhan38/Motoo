@@ -1,14 +1,19 @@
 package io.motoo.www.activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import io.motoo.www.R
+import io.motoo.www.common.BaseActivity
 import io.motoo.www.login.LoginActivity
 import io.motoo.www.signUp.SignUpActivity
 import kotlinx.android.synthetic.main.activity_splash.*
 
-class SplashActivity : AppCompatActivity() {
+class SplashActivity : BaseActivity() {
+
+    override fun setupLister() {
+
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)

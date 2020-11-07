@@ -17,7 +17,9 @@
     <dimen name="C2">12dp</dimen>
     <dimen name="L1">11dp</dimen>
     <dimen name="L2">10dp</dimen>
-
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
 
 
 </resources>
