@@ -1,97 +1,258 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
 
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    <io.motoo.www.ui.game.GameStickyNewScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/scrollViewWrap"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#fff"
         android:fillViewport="true"
         tools:context=".ui.game.GameFragment">
 
-        <FrameLayout
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="160dp"
-                android:background="@drawable/bg_bottom_round_blue_20">
+                android:layout_height="wrap_content">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
+                <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="55dp">
+                    android:layout_height="160dp"
+                    android:background="@drawable/bg_bottom_round_blue_20">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="28dp"
-                        android:fontFamily="@font/lemonmilk_bold"
-                        android:gravity="center_vertical"
-                        android:text="MOTOO"
-                        android:textColor="@color/white"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="10dp"
-                        android:padding="12dp"
-                        android:src="@drawable/ic_alram"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="28dp"
+                            android:fontFamily="@font/lemonmilk_bold"
+                            android:gravity="center_vertical"
+                            android:text="MOTOO"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:padding="12dp"
+                            android:src="@drawable/ic_alram"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                <View
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="55dp"
+
+                        android:background="@color/white_30" />
+
+                </FrameLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="55dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="80dp"
+                    android:orientation="vertical">
 
-                    android:background="@color/white_30" />
+                    <androidx.viewpager.widget.ViewPager
+                        android:id="@+id/game_top_viewPager"
+                        android:layout_width="match_parent"
+                        android:layout_height="153dp" />
 
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp">
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
             </FrameLayout>
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/gameMenuTab"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:background="@color/white"
+                android:fontFamily="@font/noto_sans_kr_medium"
+                android:textColor="@color/font_light"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:tabIndicatorColor="@color/primary_blue"
+                app:tabIndicatorHeight="2dp"
+                app:tabRippleColor="@android:color/transparent"
+                app:tabSelectedTextColor="@color/primary_blue">
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/noto_sans_kr_medium"
+                    android:text="오늘"
+                    android:textSize="16sp"
+                    android:textStyle="normal" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/noto_sans_kr_medium"
+                    android:text="이전"
+                    android:textSize="16sp"
+                    android:textStyle="normal" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/noto_sans_kr_medium"
+                    android:text="진행예정"
+                    android:textSize="16sp"
+                    android:textStyle="normal" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/noto_sans_kr_medium"
+                    android:text="참가중"
+                    android:textSize="16sp"
+
+                    android:textStyle="normal" />
+            </com.google.android.material.tabs.TabLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="@color/border_light" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="80dp"
+                android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <androidx.viewpager.widget.ViewPager
-                    android:id="@+id/game_top_viewPager"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="153dp" />
+                    android:layout_height="40dp"
+                    android:layout_marginHorizontal="23dp"
+                    android:layout_marginTop="24dp"
+                    android:orientation="horizontal"
+                    android:weightSum="90">
 
-       
-                <com.google.android.material.tabs.TabLayout
-                    android:id="@+id/game_top_tabLayout"
+                    <TextView
+                        android:id="@+id/game_list_all_button"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="30"
+                        android:background="@color/primary_blue"
+                        android:fontFamily="@font/noto_sans_kr_bold"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:text="전체"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/game_list_ranking_button"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="30"
+                        android:background="@drawable/bg_border_gray_1dp"
+                        android:fontFamily="@font/noto_sans_kr_bold"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:text="랭킹전"
+                        android:textColor="@color/font_light"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/game_list_benefit_button"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="30"
+                        android:background="@drawable/bg_border_gray_1dp"
+                        android:fontFamily="@font/noto_sans_kr_bold"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:text="수익률전"
+                        android:textColor="@color/font_light"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/goDetailRankingInfo"
                     android:layout_width="match_parent"
-                    android:layout_height="10dp"
-                    android:layout_marginTop="16dp"
-                    app:tabIndicatorColor="@color/primary_blue"
-                    app:tabIndicatorHeight="2dp"
-                    app:tabMode="fixed"
-                    app:tabSelectedTextColor="@color/primary_orange"
-                    app:tabIndicatorGravity="center" />
+                    android:layout_height="200dp"
+                    android:gravity="center"
+                    android:text="랭킹전 상세보기"
+                    android:textSize="30dp" />
 
-                <RelativeLayout
+                <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="3dp">
+                    android:layout_height="200dp"
+                    android:gravity="center"
+                    android:text="내용 없음"
+                    android:textSize="30dp" />
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:gravity="center"
+                    android:text="내용 없음"
+                    android:textSize="30dp" />
 
-                </RelativeLayout>
-                
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:gravity="center"
+                    android:text="내용 없음"
+                    android:textSize="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:gravity="center"
+                    android:text="내용 없음"
+                    android:textSize="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:gravity="center"
+                    android:text="내용 없음"
+                    android:textSize="30dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:gravity="center"
+                    android:text="내용 없음"
+                    android:textSize="30dp" />
+
             </LinearLayout>
+        </LinearLayout>
 
-        </FrameLayout>
 
-    </ScrollView>
+    </io.motoo.www.ui.game.GameStickyNewScrollView>
 </layout>

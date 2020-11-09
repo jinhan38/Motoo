@@ -7,7 +7,24 @@ import android.view.View
 import android.view.ViewGroup
 import io.motoo.www.R
 
-class SecondFragment : Fragment() {
+class SecondGameEventFragment : Fragment() {
+
+
+    companion object {
+
+        private const val TAG = "GameFragment"
+
+        @Volatile
+        private var instance: SecondGameEventFragment? = null
+
+        fun getInstance(): SecondGameEventFragment =
+            instance ?: synchronized(this) {
+                instance ?: SecondGameEventFragment().also {
+                    instance = it
+                }
+            }
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

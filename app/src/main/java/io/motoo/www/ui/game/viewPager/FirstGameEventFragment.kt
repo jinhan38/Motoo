@@ -6,8 +6,25 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import io.motoo.www.R
+import io.motoo.www.ui.game.GameFragment
 
-class FirstFragment : Fragment() {
+class FirstGameEventFragment : Fragment() {
+
+
+    companion object {
+
+        private const val TAG = "GameFragment"
+
+        @Volatile
+        private var instance: FirstGameEventFragment? = null
+
+        fun getInstance(): FirstGameEventFragment =
+            instance ?: synchronized(this) {
+                instance ?: FirstGameEventFragment().also {
+                    instance = it
+                }
+            }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

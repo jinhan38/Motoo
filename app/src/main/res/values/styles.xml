@@ -64,4 +64,8 @@
         <item name="android:activityCloseExitAnimation">@anim/slide_in_right</item>
     </style>
 
+
+    <declare-styleable name="MyViewPager">
+        <attr name="swipeable" format="boolean" />
+    </declare-styleable>
 </resources>

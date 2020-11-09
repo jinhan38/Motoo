@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_white_round_4dp"
-    tools:context=".ui.game.viewPager.ThirdFragment">
+    tools:context=".ui.game.viewPager.ThirdGameEventFragment">
 
     <TextView
         android:layout_width="match_parent"
