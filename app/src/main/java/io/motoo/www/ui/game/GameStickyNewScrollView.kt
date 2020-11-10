@@ -6,8 +6,9 @@ import android.util.Log
 import android.view.View
 import android.view.ViewTreeObserver
 import android.widget.ScrollView
+import androidx.core.widget.NestedScrollView
 
-class GameStickyNewScrollView :  ScrollView, ViewTreeObserver.OnGlobalLayoutListener{
+class GameStickyNewScrollView :  NestedScrollView, ViewTreeObserver.OnGlobalLayoutListener{
 
     companion object{
         private const val TAG = "StickyNewScrollView"

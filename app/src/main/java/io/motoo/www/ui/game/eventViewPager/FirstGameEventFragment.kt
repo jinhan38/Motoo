@@ -1,4 +1,4 @@
-package io.motoo.www.ui.game.viewPager
+package io.motoo.www.ui.game.eventViewPager
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import io.motoo.www.R
-import io.motoo.www.ui.game.GameFragment
 
 class FirstGameEventFragment : Fragment() {
 

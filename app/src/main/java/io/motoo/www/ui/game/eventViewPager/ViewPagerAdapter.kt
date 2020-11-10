@@ -1,10 +1,10 @@
-package io.motoo.www.ui.game.viewPager
+package io.motoo.www.ui.game.eventViewPager
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 
-class GameEventViewPagerAdapter(fm : FragmentManager) : FragmentPagerAdapter(fm) {
+class ViewPagerAdapter(fm : FragmentManager) : FragmentPagerAdapter(fm) {
 
     var fragmentList = ArrayList<Fragment>()
 

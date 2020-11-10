@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/gameMotionlayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fff"
-    app:layoutDescription="@xml/fragment_game_xml_gamemotionlayout_scene3">
+    tools:context=".ui.game.GameFragment">
 
     <FrameLayout
         android:id="@+id/frameLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <FrameLayout
@@ -102,7 +101,7 @@
         app:layout_constraintBottom_toTopOf="@+id/border_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/app_bar"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout3"
         app:tabIndicatorColor="@color/primary_blue"
         app:tabIndicatorHeight="2dp"
         app:tabRippleColor="@android:color/transparent"
@@ -162,5 +161,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/border_view" />
 
-</androidx.constraintlayout.motion.widget.MotionLayout>
 
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,12 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_white_round_4dp"
-    tools:context=".ui.game.viewPager.SecondGameEventFragment">
+    android:padding="1dp"
+    android:background="@drawable/bg_white_round_4dp_shadow"
+    tools:context=".ui.game.eventViewPager.SecondGameEventFragment">
 
     <TextView
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/bg_white_round_4dp"
         android:text="두번째" />
+
 </FrameLayout>

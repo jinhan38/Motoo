@@ -10,17 +10,19 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
-import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
-import info.jeovani.viewpagerindicator.ViewPagerIndicator
 import io.motoo.www.R
-import io.motoo.www.databinding.FragmentGameBinding
-import io.motoo.www.others.replaceFragment
-import io.motoo.www.signUp.SignUpActivity
-import io.motoo.www.ui.game.viewPager.FirstGameEventFragment
-import io.motoo.www.ui.game.viewPager.SecondGameEventFragment
-import io.motoo.www.ui.game.viewPager.ThirdGameEventFragment
-import io.motoo.www.ui.game.viewPager.GameEventViewPagerAdapter
+//import io.motoo.www.databinding.FragmentGameBinding
+import io.motoo.www.ui.game.eventViewPager.FirstGameEventFragment
+import io.motoo.www.ui.game.eventViewPager.SecondGameEventFragment
+import io.motoo.www.ui.game.eventViewPager.ThirdGameEventFragment
+import io.motoo.www.ui.game.eventViewPager.ViewPagerAdapter
+import io.motoo.www.ui.game.gameDateMenu.GameExpectedFragment
+import io.motoo.www.ui.game.gameDateMenu.GameIngMenuFragment
+import io.motoo.www.ui.game.gameDateMenu.GamePreviousMenuFragment
+import io.motoo.www.ui.game.gameDateMenu.GameTodayMenuFragment
 
 class GameFragment : Fragment(), View.OnClickListener {
 
@@ -39,24 +41,83 @@ class GameFragment : Fragment(), View.OnClickListener {
             }
     }
 
-    lateinit var b: FragmentGameBinding
+    lateinit var fm: FragmentManager
+    lateinit var viewPagerAdapter: ViewPagerAdapter
+    lateinit var gameDateMenuViewPager : ViewPager
+    lateinit var gameTopViewPager : ViewPager
+    lateinit var gameDateMenuTab : TabLayout
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-        b = DataBindingUtil.inflate(inflater, R.layout.fragment_game, container, false)
+        var v = inflater.inflate(R.layout.fragment_game, container, false)
 
-        Log.d(TAG, "onCreateView: ")
-        val fm = fragmentManager
-        val viewPagerAdapter = GameEventViewPagerAdapter(fm!!)
+        gameDateMenuViewPager = v.findViewById(R.id.gameDateMenuViewPager)
+        gameTopViewPager = v.findViewById(R.id.game_top_viewPager)
+        gameDateMenuTab = v.findViewById(R.id.gameDateMenuTab)
+
+        topEventViewPager()
+        gameDateMenuViewPager()
+
+//        b.scrollViewWrap.run {
+//
+//            header = b.gameDateMenuTab
+//            stickListener = { _ ->
+//                Log.d(TAG, "onCreateView: 탭 바 상단에 붙음")
+//            }
+//            freeListener = { _ ->
+//                Log.d(TAG, "onCreateView: 탭바 떨어져있음")
+//            }
+//        }
+
+//        return b.root
+        return v
+
+
+    }
+
+    fun setupListener() {
+
+    }
+
+
+    @SuppressLint("UseCompatLoadingForDrawables")
+    override fun onClick(p0: View?) {
+
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d(TAG, "onStart: ")
+    }
+
+    private fun gameDateMenuViewPager() {
+        var fm = childFragmentManager
+        var viewPagerAdapter = ViewPagerAdapter(fm)
+        viewPagerAdapter.addItem(GameTodayMenuFragment.getInstance())
+        viewPagerAdapter.addItem(GamePreviousMenuFragment.getInstance())
+        viewPagerAdapter.addItem(GameExpectedFragment.getInstance())
+        viewPagerAdapter.addItem(GameIngMenuFragment.getInstance())
+        gameDateMenuViewPager.apply {
+            adapter = viewPagerAdapter
+        }
+
+    }
+
+    private fun topEventViewPager() {
+
+        fm = childFragmentManager
+
+        viewPagerAdapter = ViewPagerAdapter(fm)
         viewPagerAdapter.addItem(FirstGameEventFragment.getInstance())
         viewPagerAdapter.addItem(SecondGameEventFragment.getInstance())
         viewPagerAdapter.addItem(ThirdGameEventFragment.getInstance())
+        gameTopViewPager.apply {
 
-        b.gameTopViewPager.apply {
-
+            Log.d(TAG, "onStart: ")
             setupListener()
             adapter = viewPagerAdapter
 
@@ -68,114 +129,6 @@ class GameFragment : Fragment(), View.OnClickListener {
             setPadding(margin, 0, margin, 0)
             pageMargin = (24 * d).toInt()
 
-//            addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(b.gameTopTabLayout))
-
-//            b.tabLayout.addOnTabSelectedListener(object : OnTabSelectedListener {
-//                override fun onTabSelected(tab: TabLayout.Tab) {
-//                    b.followsViewPager.setCurrentItem(tab.position)
-//                }
-//
-//                override fun onTabUnselected(tab: TabLayout.Tab) {}
-//                override fun onTabReselected(tab: TabLayout.Tab) {}
-//            })
-
-//            b.gameTopTabLayout.addOnTabSelectedListener(object : OnTabSelectedListener {
-//                override fun onTabSelected(tab: TabLayout.Tab?) {
-//                    b.gameTopViewPager.currentItem = tab!!.position
-//                }
-//
-//                override fun onTabUnselected(tab: TabLayout.Tab?) {
-//                }
-//
-//                override fun onTabReselected(tab: TabLayout.Tab?) {
-//                }
-//
-//            })
-        }
-
-
-        b.scrollViewWrap.run {
-
-            header = b.gameMenuTab
-            stickListener = { _ ->
-                Log.d(TAG, "onCreateView: 탭 바 상단에 붙음")
-            }
-            freeListener = { _ ->
-                Log.d(TAG, "onCreateView: 탭바 떨어져있음")
-            }
-        }
-
-        return b.root
-
-
-    }
-
-    fun setupListener() {
-        b.gameListAllButton.setOnClickListener(this)
-        b.gameListRankingButton.setOnClickListener(this)
-        b.gameListBenefitButton.setOnClickListener(this)
-        b.goDetailRankingInfo.setOnClickListener(this)
-    }
-
-    @SuppressLint("UseCompatLoadingForDrawables")
-    override fun onClick(p0: View?) {
-        when (p0!!.id) {
-            R.id.goDetailRankingInfo -> {
-                activity?.startActivity(Intent(activity, GameRankingDetailInfo::class.java))
-                activity?.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-            }
-            R.id.game_list_all_button -> {
-
-                b.gameListAllButton.setBackgroundColor(
-                    resources.getColor(
-                        R.color.primary_blue,
-                        null
-                    )
-                )
-                b.gameListAllButton.setTextColor(Color.WHITE)
-                b.gameListRankingButton.background =
-                    resources.getDrawable(R.drawable.bg_border_gray_1dp, null)
-                b.gameListRankingButton.setTextColor(resources.getColor(R.color.font_light, null))
-                b.gameListBenefitButton.background =
-                    resources.getDrawable(R.drawable.bg_border_gray_1dp, null)
-                b.gameListBenefitButton.setTextColor(resources.getColor(R.color.font_light, null))
-            }
-
-            R.id.game_list_ranking_button -> {
-
-                b.gameListRankingButton.setBackgroundColor(
-                    resources.getColor(
-                        R.color.primary_blue,
-                        null
-                    )
-                )
-                b.gameListRankingButton.setTextColor(Color.WHITE)
-                b.gameListAllButton.background =
-                    resources.getDrawable(R.drawable.bg_border_gray_1dp, null)
-                b.gameListAllButton.setTextColor(resources.getColor(R.color.font_light, null))
-                b.gameListBenefitButton.background =
-                    resources.getDrawable(R.drawable.bg_border_gray_1dp, null)
-                b.gameListBenefitButton.setTextColor(resources.getColor(R.color.font_light, null))
-
-            }
-
-            R.id.game_list_benefit_button -> {
-
-                b.gameListBenefitButton.setBackgroundColor(
-                    resources.getColor(
-                        R.color.primary_blue,
-                        null
-                    )
-                )
-                b.gameListBenefitButton.setTextColor(Color.WHITE)
-                b.gameListAllButton.background =
-                    resources.getDrawable(R.drawable.bg_border_gray_1dp, null)
-                b.gameListAllButton.setTextColor(resources.getColor(R.color.font_light, null))
-                b.gameListRankingButton.background =
-                    resources.getDrawable(R.drawable.bg_border_gray_1dp, null)
-                b.gameListRankingButton.setTextColor(resources.getColor(R.color.font_light, null))
-
-            }
         }
     }
 

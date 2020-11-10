@@ -3,15 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="1dp"
-    android:background="@drawable/bg_white_round_4dp_shadow"
-    tools:context=".ui.game.eventViewPager.ThirdGameEventFragment">
+    tools:context=".ui.game.gameDateMenu.GameIngMenuFragment">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:background="@drawable/bg_white_round_4dp"
-        android:text="세번째" />
+
+        android:text="진행중"
+        android:textSize="30dp" />
 
 </FrameLayout>
