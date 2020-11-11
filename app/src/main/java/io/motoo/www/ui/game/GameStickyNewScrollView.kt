@@ -48,6 +48,7 @@ class GameStickyNewScrollView :  NestedScrollView, ViewTreeObserver.OnGlobalLayo
 
     override fun onGlobalLayout() {
         mHeaderInitPosition = header?.top?.toFloat() ?: 0f
+        Log.d(TAG, "onGlobalLayout: header : $header")
     }
 
     override fun onScrollChanged(l: Int, t: Int, oldl: Int, oldt: Int) {

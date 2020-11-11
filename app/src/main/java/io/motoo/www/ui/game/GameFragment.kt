@@ -11,18 +11,23 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
 import io.motoo.www.R
+import io.motoo.www.databinding.FragmentGameBinding
+import io.motoo.www.others.tabLayoutController
+import io.motoo.www.ui.Bottom
 //import io.motoo.www.databinding.FragmentGameBinding
 import io.motoo.www.ui.game.eventViewPager.FirstGameEventFragment
 import io.motoo.www.ui.game.eventViewPager.SecondGameEventFragment
 import io.motoo.www.ui.game.eventViewPager.ThirdGameEventFragment
 import io.motoo.www.ui.game.eventViewPager.ViewPagerAdapter
-import io.motoo.www.ui.game.gameDateMenu.GameExpectedFragment
-import io.motoo.www.ui.game.gameDateMenu.GameIngMenuFragment
-import io.motoo.www.ui.game.gameDateMenu.GamePreviousMenuFragment
-import io.motoo.www.ui.game.gameDateMenu.GameTodayMenuFragment
+import io.motoo.www.ui.game.gameDateMenu.*
+import io.motoo.www.ui.market.MarketFragment
+import io.motoo.www.ui.mypage.MyPageFragment
+import io.motoo.www.ui.portfolio.PortfolioFragment
 
 class GameFragment : Fragment(), View.OnClickListener {
 
@@ -42,47 +47,75 @@ class GameFragment : Fragment(), View.OnClickListener {
     }
 
     lateinit var fm: FragmentManager
+    lateinit var transaction: FragmentTransaction
     lateinit var viewPagerAdapter: ViewPagerAdapter
-    lateinit var gameDateMenuViewPager : ViewPager
-    lateinit var gameTopViewPager : ViewPager
-    lateinit var gameDateMenuTab : TabLayout
-
+    lateinit var b: FragmentGameBinding
+    lateinit var gameInfoAdapter: GameInfoAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        b = DataBindingUtil.inflate(inflater, R.layout.fragment_game, container, false)
 
-        var v = inflater.inflate(R.layout.fragment_game, container, false)
 
-        gameDateMenuViewPager = v.findViewById(R.id.gameDateMenuViewPager)
-        gameTopViewPager = v.findViewById(R.id.game_top_viewPager)
-        gameDateMenuTab = v.findViewById(R.id.gameDateMenuTab)
+//        transaction = childFragmentManager.beginTransaction()
+//        transaction.replace(R.id.fragment_container, GameTodayMenuFragment.getInstance(), "game").commit()
 
+        tabLayoutStickyToTop()
         topEventViewPager()
-        gameDateMenuViewPager()
-
-//        b.scrollViewWrap.run {
-//
-//            header = b.gameDateMenuTab
-//            stickListener = { _ ->
-//                Log.d(TAG, "onCreateView: 탭 바 상단에 붙음")
-//            }
-//            freeListener = { _ ->
-//                Log.d(TAG, "onCreateView: 탭바 떨어져있음")
-//            }
-//        }
-
-//        return b.root
-        return v
+//        gameDateMenuViewPager()
+        recyclerViewSetting()
 
 
+        return b.root
+
+
+    }
+
+
+    private fun tabLayoutStickyToTop() {
+        b.scrollViewWrap.run {
+
+            header = b.gameDateMenuTab
+            stickListener = { _ ->
+                Log.d(TAG, "onCreateView: 탭 바 상단에 붙음")
+            }
+            freeListener = { _ ->
+                Log.d(TAG, "onCreateView: 탭바 떨어져있음")
+            }
+        }
     }
 
     fun setupListener() {
 
+
     }
 
+    fun recyclerViewSetting() {
+
+        var stringList = ArrayList<String>()
+        stringList.add("1")
+        stringList.add("2")
+        stringList.add("3")
+        stringList.add("4")
+        stringList.add("5")
+        stringList.add("6")
+
+        b.recyclerViewGameInfo.apply {
+            var layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, true)
+            this.layoutManager = layoutManager
+            setHasFixedSize(true)
+            gameInfoAdapter = GameInfoAdapter()
+            gameInfoAdapter.addItem(stringList)
+            adapter = gameInfoAdapter
+
+        }
+    }
+
+    fun recyclerViewAddItem() {
+
+    }
 
     @SuppressLint("UseCompatLoadingForDrawables")
     override fun onClick(p0: View?) {
@@ -95,15 +128,49 @@ class GameFragment : Fragment(), View.OnClickListener {
     }
 
     private fun gameDateMenuViewPager() {
-        var fm = childFragmentManager
-        var viewPagerAdapter = ViewPagerAdapter(fm)
-        viewPagerAdapter.addItem(GameTodayMenuFragment.getInstance())
-        viewPagerAdapter.addItem(GamePreviousMenuFragment.getInstance())
-        viewPagerAdapter.addItem(GameExpectedFragment.getInstance())
-        viewPagerAdapter.addItem(GameIngMenuFragment.getInstance())
-        gameDateMenuViewPager.apply {
-            adapter = viewPagerAdapter
-        }
+//        var fm = childFragmentManager
+//        var viewPagerAdapter = ViewPagerAdapter(fm)
+//        viewPagerAdapter.addItem(GameTodayMenuFragment.getInstance())
+//        viewPagerAdapter.addItem(GamePreviousMenuFragment.getInstance())
+//        viewPagerAdapter.addItem(GameExpectedFragment.getInstance())
+//        viewPagerAdapter.addItem(GameIngMenuFragment.getInstance())
+//        b.gameDateMenuViewPager.apply {
+//            adapter = viewPagerAdapter
+//        }
+
+
+//        b.gameDateMenuTab.tabLayoutController {tab ->
+//
+//
+//            transaction = childFragmentManager.beginTransaction()
+//
+//            when(tab?.position)     {
+//                0 -> {
+//                    Log.d(TAG, "setupLister: 게임 클릭")
+//                    transaction.replace(R.id.fragment_container, GameTodayMenuFragment.getInstance())
+//                }
+//                1 -> {
+//                    Log.d(TAG, "setupLister: 게임 클릭")
+//                    transaction.replace(R.id.fragment_container, GamePreviousMenuFragment.getInstance())
+//                }
+//                2 -> {
+//                    Log.d(TAG, "setupLister: 게임 클릭")
+//                    transaction.replace(R.id.fragment_container, GameExpectedFragment.getInstance())
+//                }
+//                3 -> {
+//                    Log.d(TAG, "setupLister: 게임 클릭")
+//                    transaction.replace(R.id.fragment_container, GameIngMenuFragment.getInstance())
+//                }
+//            }
+//
+//            //addToBackStack(null)을 추가하면 back 버튼이 먹음
+////            transaction.addToBackStack(null)
+//            transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+//            transaction.commit()
+//        }
+
+
+//        true
 
     }
 
@@ -115,7 +182,7 @@ class GameFragment : Fragment(), View.OnClickListener {
         viewPagerAdapter.addItem(FirstGameEventFragment.getInstance())
         viewPagerAdapter.addItem(SecondGameEventFragment.getInstance())
         viewPagerAdapter.addItem(ThirdGameEventFragment.getInstance())
-        gameTopViewPager.apply {
+        b.gameTopViewPager.apply {
 
             Log.d(TAG, "onStart: ")
             setupListener()

@@ -61,8 +61,6 @@ class Bottom : BaseActivity(), View.OnClickListener {
             transaction = supportFragmentManager.beginTransaction()
 
 
-
-
             when (item.itemId) {
                 R.id.navigation_game -> {
                     Log.d(TAG, "setupLister: 게임 클릭")

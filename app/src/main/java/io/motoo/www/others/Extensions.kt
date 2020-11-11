@@ -8,6 +8,7 @@ import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.commit
+import com.google.android.material.tabs.TabLayout
 import io.motoo.www.R
 
 
@@ -47,5 +48,25 @@ fun Fragment.replaceFragment(containerView: Int, activity: FragmentActivity) {
         replace(containerView, fragment)
         addToBackStack(null)
     }
+
+}
+
+fun TabLayout.tabLayoutController(completion: (tab: TabLayout.Tab?) -> Unit) {
+    this.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+        override fun onTabSelected(tab: TabLayout.Tab?) {
+            Log.d(TAG, "onTabSelected: completion")
+            completion(tab)
+        }
+
+        override fun onTabUnselected(tab: TabLayout.Tab?) {
+
+
+        }
+
+        override fun onTabReselected(tab: TabLayout.Tab?) {
+
+        }
+
+    })
 
 }

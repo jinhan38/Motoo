@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.LinearLayoutManager
 import io.motoo.www.R
 import io.motoo.www.databinding.FragmentGameTodayMenuBinding
 import io.motoo.www.ui.game.GameRankingDetailInfo
@@ -39,7 +40,7 @@ class GameTodayMenuFragment : Fragment(), View.OnClickListener {
         // Inflate the layout for this fragment
         b = DataBindingUtil.inflate(inflater, R.layout.fragment_game_today_menu, container, false)
         setupListener()
-        
+
         return b.root
     }
 
@@ -49,15 +50,17 @@ class GameTodayMenuFragment : Fragment(), View.OnClickListener {
         b.gameListAllButton.setOnClickListener(this)
         b.gameListRankingButton.setOnClickListener(this)
         b.gameListBenefitButton.setOnClickListener(this)
-        b.goDetailRankingInfo.setOnClickListener(this)
+//        b.goDetailRankingInfo.setOnClickListener(this)
     }
+
+
 
     override fun onClick(p0: View?) {
         when (p0!!.id) {
-            R.id.goDetailRankingInfo -> {
-                activity?.startActivity(Intent(activity, GameRankingDetailInfo::class.java))
-                activity?.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-            }
+//            R.id.goDetailRankingInfo -> {
+//                activity?.startActivity(Intent(activity, GameRankingDetailInfo::class.java))
+//                activity?.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+//            }
             R.id.game_list_all_button -> {
 
                 b.gameListAllButton.setBackgroundColor(
