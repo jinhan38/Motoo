@@ -1,4 +1,4 @@
-package io.motoo.www.login
+package io.motoo.www.ui.login
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

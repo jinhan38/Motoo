@@ -14,7 +14,7 @@
             android:name=".ui.Bottom"
             android:theme="@style/SplashTheme"></activity>
         <activity
-            android:name=".signUp.SignUpActivity"
+            android:name="io.motoo.www.ui.signUp.SignUpActivity"
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".activity.SplashActivity"
@@ -26,7 +26,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".login.LoginActivity"
+            android:name="io.motoo.www.ui.login.LoginActivity"
             android:windowSoftInputMode="adjustResize" />
     </application>
 

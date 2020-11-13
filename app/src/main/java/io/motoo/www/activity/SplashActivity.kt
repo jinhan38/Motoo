@@ -4,8 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import io.motoo.www.R
 import io.motoo.www.common.BaseActivity
-import io.motoo.www.login.LoginActivity
-import io.motoo.www.signUp.SignUpActivity
+import io.motoo.www.ui.login.LoginActivity
+import io.motoo.www.ui.signUp.SignUpActivity
 import kotlinx.android.synthetic.main.activity_splash.*
 
 class SplashActivity : BaseActivity() {

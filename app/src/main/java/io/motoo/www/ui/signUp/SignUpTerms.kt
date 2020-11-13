@@ -1,4 +1,4 @@
-package io.motoo.www.signUp
+package io.motoo.www.ui.signUp
 
 import android.content.ContentValues.TAG
 import android.os.Bundle

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true">
@@ -12,7 +12,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/white"
-            tools:context=".login.LoginFragment">
+            tools:context=".ui.login.LoginFragment">
 
             <FrameLayout
                 android:id="@+id/frameLayout"
@@ -61,7 +61,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName"
+                android:id="@+id/email_address_login"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_marginHorizontal="30dp"
@@ -73,15 +73,31 @@
                 android:textColor="@color/gray_500"
                 android:textColorHint="@color/gray_500"
                 android:textSize="18sp"
-                android:textStyle="normal"
-                android:theme="@style/EditTheme"
+                android:theme="@style/EditThemeNormal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView"
                 tools:background="#fff" />
 
+            <TextView
+                android:id="@+id/email_error_msg_login"
+                android:layout_width="0dp"
+                android:layout_height="18dp"
+                android:drawablePadding="5dp"
+                android:gravity="center_vertical"
+                android:text="@string/invalidEmailFormat"
+                android:textColor="@color/red"
+                android:textSize="12sp"
+                android:textStyle="normal"
+                android:theme="@style/EditThemeNormal"
+                android:visibility="gone"
+                app:drawableLeftCompat="@drawable/ic_icon_16_form_delete_red"
+                app:layout_constraintStart_toStartOf="@+id/email_address_login"
+                app:layout_constraintTop_toBottomOf="@+id/email_address_login"
+                tools:visibility="visible" />
+
             <EditText
-                android:id="@+id/editTextTextPersonName2"
+                android:id="@+id/password_login"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginHorizontal="30dp"
@@ -92,26 +108,74 @@
                 android:textColor="@color/gray_500"
                 android:textColorHint="@color/gray_500"
                 android:textSize="18sp"
-                android:theme="@style/EditTheme"
-                app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName"
-                app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+                android:theme="@style/EditThemeNormal"
+                app:layout_constraintEnd_toEndOf="@+id/email_address_login"
+                app:layout_constraintStart_toStartOf="@+id/email_address_login"
+                app:layout_constraintTop_toBottomOf="@+id/email_address_login"
                 tools:background="#fff" />
+
+            <CheckBox
+                android:id="@+id/autoLogin_checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="10dp"
+                android:text="기억하기"
+                android:padding="8dp"
+                android:layout_marginTop="41dp"
+                android:button="@drawable/checkbox_custom"
+                android:checked="true"
+                app:layout_constraintStart_toStartOf="@+id/password_login"
+                app:layout_constraintTop_toBottomOf="@+id/password_login" />
+
+
+            <TextView
+                android:id="@+id/password_find"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingVertical="5dp"
+                android:text="비밀번호 재설정"
+                android:textColor="#4b5461"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/autoLogin_checkBox"
+                app:layout_constraintEnd_toEndOf="@+id/password_login"
+                app:layout_constraintTop_toTopOf="@+id/autoLogin_checkBox" />
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="1dp"
+                android:layout_height="10dp"
+                android:background="@color/middle_gray"
+                app:layout_constraintBottom_toBottomOf="@+id/password_find"
+                app:layout_constraintEnd_toStartOf="@+id/password_find"
+                app:layout_constraintTop_toTopOf="@+id/password_find" />
+
+            <TextView
+                android:id="@+id/email_find"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="10dp"
+                android:text="이메일 찾기"
+                android:paddingVertical="5dp"
+                app:layout_constraintBottom_toBottomOf="@+id/password_find"
+                app:layout_constraintEnd_toStartOf="@+id/view2"
+                app:layout_constraintTop_toTopOf="@+id/password_find" />
 
             <Button
                 android:id="@+id/login_start_button"
                 android:layout_width="0dp"
                 android:layout_height="48dp"
-                android:layout_marginTop="70dp"
+                android:layout_marginTop="89dp"
                 android:background="@drawable/bg_round_gray_300_4dp"
                 android:fontFamily="@font/noto_sans_kr_bold"
                 android:text="시작하기"
                 android:textColor="#ffffff"
+                android:enabled="false"
                 android:textSize="14sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName2"
-                app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName2"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+                app:layout_constraintEnd_toEndOf="@+id/password_login"
+                app:layout_constraintStart_toStartOf="@+id/password_login"
+                app:layout_constraintTop_toBottomOf="@+id/password_login" />
 
 
             <FrameLayout
@@ -140,7 +204,7 @@
                     android:fontFamily="@font/noto_sans_kr_bold"
                     android:paddingHorizontal="15dp"
                     android:text="간편 로그인"
-                    android:textColor="#4b5461"
+                    android:textColor="#a5a9b0"
                     android:textSize="12sp"
                     android:textStyle="bold" />
 
@@ -153,6 +217,8 @@
                 android:layout_marginHorizontal="30dp"
                 android:layout_marginTop="32dp"
                 android:background="@drawable/bg_border_gray_1dp"
+                android:drawableLeft="@drawable/ic_email"
+                android:paddingHorizontal="48dp"
                 android:text="이메일로 로그인"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -164,7 +230,7 @@
                 android:layout_height="48dp"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/bg_round_kakao_4dp"
-                android:drawableLeft="@drawable/ic_kakao_30"
+                android:drawableLeft="@drawable/ic_kakao"
                 android:paddingHorizontal="48dp"
                 android:text="카카오톡 로그인"
                 android:textColor="@color/black"
@@ -178,7 +244,7 @@
                 android:layout_height="48dp"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/bg_round_facebook_4dp"
-                android:drawableLeft="@drawable/facebook_icon_30"
+                android:drawableLeft="@drawable/ic_facebook"
                 android:paddingHorizontal="48dp"
                 android:text="페이스북 로그인"
                 android:textColor="@color/white"

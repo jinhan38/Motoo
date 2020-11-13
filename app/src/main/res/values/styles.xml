@@ -52,9 +52,20 @@
 
 
     <!--    EditText 밑줄, 커서 컬러 변경-->
-    <style name="EditTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="EditThemeNormal" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--        커서-->
         <item name="colorAccent">@color/primary_blue</item>
-<!--        <item name="colorControlNormal">@color/middle_gray</item>-->
+        <!--        밑줄-->
+        <item name="colorControlNormal">@color/primary_blue</item>
+    </style>
+
+    <style name="EditThemeError" parent="Theme.AppCompat.Light.NoActionBar">
+
+
+        <item name="colorAccent">@color/red</item>
+        <item name="colorPrimary">@color/red</item>
+        <item name="colorPrimaryDark">@color/red</item>
+        <item name="colorControlNormal">@color/red</item>
     </style>
 
     <style name="CustomActivityAnimation" parent="@android:style/Animation.Activity">

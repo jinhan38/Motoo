@@ -11,7 +11,7 @@
         android:background="@color/white"
         android:fillViewport="true"
         android:fitsSystemWindows="true"
-        tools:context=".signUp.SignUpProfile">
+        tools:context=".ui.signUp.SignUpProfile">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -243,6 +243,8 @@
                 android:layout_height="48dp"
                 android:layout_marginTop="32dp"
                 android:background="@drawable/bg_border_gray_1dp"
+                android:drawableLeft="@drawable/ic_email"
+                android:paddingHorizontal="48dp"
                 android:text="이메일로 로그인"
                 app:layout_constraintEnd_toStartOf="@+id/guideline2"
                 app:layout_constraintStart_toStartOf="@+id/guideline"
@@ -254,7 +256,7 @@
                 android:layout_height="48dp"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/bg_round_kakao_4dp"
-                android:drawableLeft="@drawable/ic_kakao_30"
+                android:drawableLeft="@drawable/ic_kakao"
                 android:paddingHorizontal="48dp"
                 android:text="카카오톡 로그인"
                 android:textColor="@color/black"
@@ -269,7 +271,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="48dp"
                 android:background="@drawable/bg_round_facebook_4dp"
-                android:drawableLeft="@drawable/facebook_icon_30"
+                android:drawableLeft="@drawable/ic_facebook"
                 android:paddingHorizontal="48dp"
                 android:text="페이스북 로그인"
                 android:textColor="@color/white"

@@ -1,11 +1,8 @@
-package io.motoo.www.signUp
+package io.motoo.www.ui.signUp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import io.motoo.www.R
-import io.motoo.www.customInterface.BackButton
 
 class SignUpActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
