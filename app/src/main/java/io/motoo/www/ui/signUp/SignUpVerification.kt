@@ -37,10 +37,7 @@ class SignUpVerification : Fragment() {
 
         stringCategory.add("한국")
         stringCategory.add("+82")
-//        val adapter = ArrayAdapter<String>(this, R.layout.activity_spinner_item)
-//        val adapter: ArrayAdapter<String> = ArrayAdapter<String>(
-//            this, R.layout.activity_spinner_item, stringCategory
-//        )
+        
         ArrayAdapter.createFromResource(
             requireActivity(),
             R.array.country_num,

@@ -69,4 +69,6 @@ dependencies {
 
     // 인디케이터 애니메이션
     implementation "com.github.JeovaniMartinez:AndroidViewPagerIndicator:0.1.0"
+    implementation 'com.tbuonomo.andrui:viewpagerdotsindicator:4.1.2'
+
 }

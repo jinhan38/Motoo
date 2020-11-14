@@ -22,6 +22,7 @@ allprojects {
 
         //custom viewpager indicator
         maven { url 'https://jitpack.io' }
+
     }
 }
 

@@ -1,64 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/bg_basic">
+    android:background="@color/bg_basic"
+    android:orientation="vertical">
 
     <LinearLayout
-        android:id="@+id/header_wrap"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="23dp"
         android:layout_marginTop="24dp"
+        android:background="@drawable/bg_border_gray_1dp"
         android:layout_marginBottom="12dp"
-        android:orientation="horizontal"
-        android:weightSum="90">
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/game_list_all_button"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="30"
-            android:background="@color/primary_blue"
-            android:fontFamily="@font/noto_sans_kr_bold"
-            android:gravity="center"
-            android:includeFontPadding="false"
-            android:text="전체"
-            android:textColor="@color/white"
-            android:textSize="14sp"
-            android:textStyle="bold" />
+        <LinearLayout
+            android:id="@+id/header_wrap"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:weightSum="90">
 
-        <TextView
-            android:id="@+id/game_list_ranking_button"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="30"
-            android:background="@drawable/bg_border_gray_1dp"
-            android:fontFamily="@font/noto_sans_kr_bold"
-            android:gravity="center"
-            android:includeFontPadding="false"
-            android:text="랭킹전"
-            android:textColor="@color/font_light"
-            android:textSize="14sp"
-            android:textStyle="bold" />
+            <TextView
+                android:id="@+id/game_list_all_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="30"
+                android:background="@color/primary_blue"
+                android:fontFamily="@font/noto_sans_kr_bold"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="전체"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/game_list_benefit_button"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="30"
-            android:background="@drawable/bg_border_gray_1dp"
-            android:fontFamily="@font/noto_sans_kr_bold"
-            android:gravity="center"
-            android:includeFontPadding="false"
-            android:text="수익률전"
-            android:textColor="@color/font_light"
-            android:textSize="14sp"
-            android:textStyle="bold" />
+            <TextView
+                android:id="@+id/game_list_ranking_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="30"
+                android:background="@drawable/bg_border_gray_round_1dp"
+                android:fontFamily="@font/noto_sans_kr_bold"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="랭킹전"
+                android:textColor="@color/font_light"
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
+            <TextView
+                android:id="@+id/game_list_benefit_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="30"
+                android:background="@drawable/bg_border_gray_round_1dp"
+                android:fontFamily="@font/noto_sans_kr_bold"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="수익률전"
+                android:textColor="@color/font_light"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp">
+
+            <TextView
+                android:id="@+id/연습경기"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:background="@drawable/bg_blue_round_16dp"
+                android:paddingHorizontal="16dp"
+                android:fontFamily="@font/noto_sans_kr_medium"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="2sp"
+                android:text="@string/practice_game_text"
+                android:textColor="@color/primary_blue"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/오천원"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/오천원"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:background="@drawable/bg_basic_gray_round_16dp"
+                android:includeFontPadding="false"
+                android:paddingHorizontal="16dp"
+                android:text="@string/오천원탭"
+                android:gravity="center"
+                android:lineSpacingExtra="2sp"
+                android:textColor="@color/gray_500"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/만원"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/연습경기"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/만원"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:background="@drawable/bg_basic_gray_round_16dp"
+                android:paddingHorizontal="16dp"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="2sp"
+                android:text="@string/만원탭"
+                android:textColor="@color/gray_500"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/이만원"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/오천원"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/이만원"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:background="@drawable/bg_basic_gray_round_16dp"
+                android:paddingHorizontal="16dp"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="2sp"
+                android:text="@string/이만원탭"
+                android:textColor="@color/gray_500"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/만원"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
-
 </LinearLayout>

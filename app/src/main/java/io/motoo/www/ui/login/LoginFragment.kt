@@ -98,12 +98,12 @@ class LoginFragment : Fragment(), View.OnClickListener {
         if (emailValidation && passwordValidation) {
             v.login_start_button.apply {
                 background = resources.getDrawable(R.drawable.bg_round_brand_4dp, null)
-                isEnabled = true
+//                isEnabled = true
             }
         } else {
             v.login_start_button.apply {
                 background = resources.getDrawable(R.drawable.bg_round_gray_300_4dp, null)
-                isEnabled = false
+//                isEnabled = false
             }
         }
 

@@ -77,7 +77,7 @@ class GameFragment : Fragment(), View.OnClickListener {
     private fun tabLayoutStickyToTop() {
         b.scrollViewWrap.run {
 
-            header = b.gameDateMenuTab
+            header = b.gameDateMenuTabWrap
             stickListener = { _ ->
                 Log.d(TAG, "onCreateView: 탭 바 상단에 붙음")
             }
@@ -111,10 +111,6 @@ class GameFragment : Fragment(), View.OnClickListener {
             adapter = gameInfoAdapter
 
         }
-    }
-
-    fun recyclerViewAddItem() {
-
     }
 
     @SuppressLint("UseCompatLoadingForDrawables")
