@@ -8,5 +8,22 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="io.motoo.www.ui.login.LoginFragment"
-        android:label="LoginFragment" />
+        android:label="LoginFragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_findIDFragment"
+            app:destination="@id/findIDFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_passwordResetFragment"
+            app:destination="@id/passwordResetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/findIDFragment"
+        android:name="io.motoo.www.ui.login.FindIDFragment"
+        android:label="find_i_d_fragment"
+        tools:layout="@layout/find_i_d_fragment" />
+    <fragment
+        android:id="@+id/passwordResetFragment"
+        android:name="io.motoo.www.ui.login.PasswordResetFragment"
+        android:label="fragment_password_reset"
+        tools:layout="@layout/fragment_password_reset" />
 </navigation>

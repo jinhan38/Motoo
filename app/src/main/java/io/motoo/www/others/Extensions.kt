@@ -12,8 +12,6 @@ import com.google.android.material.tabs.TabLayout
 import io.motoo.www.R
 
 
-//EditText 익스텐션 메소드
-//afterTextChanged만 쓰려고 한다
 fun EditText.onMyTextChanged(completion: (Editable?) -> Unit) {
     this.addTextChangedListener(object : TextWatcher {
 

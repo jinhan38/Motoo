@@ -1,28 +1,27 @@
 package io.motoo.www.ui.login
 
-import android.R.color
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.res.ColorStateList
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.ViewCompat
-import androidx.navigation.fragment.findNavController
+import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import io.motoo.www.R
-import io.motoo.www.common.BaseFragment
 import io.motoo.www.others.MyPasswordTransformationMethod
 import io.motoo.www.others.Utils
 import io.motoo.www.others.onMyTextChanged
+import io.motoo.www.others.replaceFragment
 import io.motoo.www.ui.Bottom
+import io.motoo.www.ui.signUp.SignUpProfile
 import kotlinx.android.synthetic.main.fragment_login.view.*
 
 
-class LoginFragment : BaseFragment(), View.OnClickListener {
+class LoginFragment : Fragment(), View.OnClickListener {
 
     companion object {
         private const val TAG = "LoginFragment"
@@ -32,6 +31,7 @@ class LoginFragment : BaseFragment(), View.OnClickListener {
     var passwordValidation = false
 
     lateinit var v: View
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -46,9 +46,11 @@ class LoginFragment : BaseFragment(), View.OnClickListener {
         return v
     }
 
-    override fun setupListener() {
+    private fun setupListener() {
         v.login_start_button.setOnClickListener(this)
         v.autoLogin_checkBox.setOnClickListener(this)
+        v.email_find.setOnClickListener(this)
+        v.password_find.setOnClickListener(this)
 
         v.email_address_login.onMyTextChanged {
 
@@ -78,7 +80,7 @@ class LoginFragment : BaseFragment(), View.OnClickListener {
 
             } else {
                 v.email_error_msg_login.visibility = View.GONE
-                ViewCompat.setBackgroundTintList(v.email_address_login, colorStateListBlue)
+//                ViewCompat.setBackgroundTintList(v.email_address_login, colorStateListBlue)
             }
 
             loginButtonBgChange()
@@ -118,6 +120,15 @@ class LoginFragment : BaseFragment(), View.OnClickListener {
                 } else {
                     v.autoLogin_checkBox.isSelected = true
                 }
+
+            }
+            R.id.email_find -> {
+                FindIDFragment().replaceFragment(R.id.fragment, requireActivity())
+//                Navigation.findNavController(v)
+//                    .navigate(R.id.action_loginFragment_to_findIDFragment)
+            }
+            R.id. password_find ->{
+                PasswordResetFragment().replaceFragment(R.id.fragment, requireActivity())
 
             }
         }

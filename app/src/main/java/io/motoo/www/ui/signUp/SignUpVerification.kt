@@ -43,7 +43,7 @@ class SignUpVerification : Fragment() {
 //        )
         ArrayAdapter.createFromResource(
             requireActivity(),
-            R.array.planets_array,
+            R.array.country_num,
             android.R.layout.simple_spinner_item
         ).also { adapter ->
             // Specify the layout to use when the list of choices appears
@@ -51,7 +51,6 @@ class SignUpVerification : Fragment() {
             // Apply the adapter to the spinner
             v.spinner.adapter = adapter
         }
-
 
 
         return v
