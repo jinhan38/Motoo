@@ -48,7 +48,6 @@ class GameStickyNewScrollView :  NestedScrollView, ViewTreeObserver.OnGlobalLayo
 
     override fun onGlobalLayout() {
         mHeaderInitPosition = header?.top?.toFloat() ?: 0f
-        Log.d(TAG, "onGlobalLayout: header : $header")
     }
 
     override fun onScrollChanged(l: Int, t: Int, oldl: Int, oldt: Int) {
@@ -56,8 +55,6 @@ class GameStickyNewScrollView :  NestedScrollView, ViewTreeObserver.OnGlobalLayo
 
         val scrolly = t
 
-        Log.d(TAG, "onScrollChanged: t : $t")
-        Log.d(TAG, "onScrollChanged: scrolly : $scrolly, mHeaderInitPosition : $mHeaderInitPosition  ")
         if (scrolly > mHeaderInitPosition) {
             stickHeader(scrolly - mHeaderInitPosition)
         } else {

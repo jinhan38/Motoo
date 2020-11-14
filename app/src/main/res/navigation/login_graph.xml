@@ -3,19 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/loginStartFragment">
 
-    <fragment
-        android:id="@+id/loginFragment"
-        android:name="io.motoo.www.ui.login.LoginFragment"
-        android:label="LoginFragment" >
-        <action
-            android:id="@+id/action_loginFragment_to_findIDFragment"
-            app:destination="@id/findIDFragment" />
-        <action
-            android:id="@+id/action_loginFragment_to_passwordResetFragment"
-            app:destination="@id/passwordResetFragment" />
-    </fragment>
     <fragment
         android:id="@+id/findIDFragment"
         android:name="io.motoo.www.ui.login.FindIDFragment"
@@ -26,4 +15,16 @@
         android:name="io.motoo.www.ui.login.PasswordResetFragment"
         android:label="fragment_password_reset"
         tools:layout="@layout/fragment_password_reset" />
+    <fragment
+        android:id="@+id/loginStartFragment"
+        android:name="io.motoo.www.ui.login.LoginStartFragment"
+        android:label="fragment_login_start"
+        tools:layout="@layout/fragment_login_start" >
+        <action
+            android:id="@+id/action_loginStartFragment_to_findIDFragment"
+            app:destination="@id/findIDFragment" />
+        <action
+            android:id="@+id/action_loginStartFragment_to_passwordResetFragment"
+            app:destination="@id/passwordResetFragment" />
+    </fragment>
 </navigation>

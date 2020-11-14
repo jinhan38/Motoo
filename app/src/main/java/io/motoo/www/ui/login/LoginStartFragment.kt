@@ -5,41 +5,39 @@ import android.content.Intent
 import android.content.res.ColorStateList
 import android.os.Bundle
 import android.util.Log
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.ViewCompat
-import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation
 import io.motoo.www.R
 import io.motoo.www.others.MyPasswordTransformationMethod
 import io.motoo.www.others.Utils
 import io.motoo.www.others.onMyTextChanged
 import io.motoo.www.others.replaceFragment
 import io.motoo.www.ui.Bottom
-import io.motoo.www.ui.signUp.SignUpProfile
-import kotlinx.android.synthetic.main.fragment_login.view.*
+import kotlinx.android.synthetic.main.fragment_login_start.view.*
+import kotlinx.android.synthetic.main.fragment_login_start.view.password_login
 
-
-class LoginFragment : Fragment(), View.OnClickListener {
+class LoginStartFragment : Fragment(), View.OnClickListener {
 
     companion object {
-        private const val TAG = "LoginFragment"
+        private const val TAG = "LoginStartFragment"
     }
 
     var emailValidation = false
     var passwordValidation = false
 
     lateinit var v: View
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-        v = inflater.inflate(R.layout.fragment_login, container, false)
-
+        v = inflater.inflate(R.layout.fragment_login_start, container, false)
         v.password_login.transformationMethod = MyPasswordTransformationMethod()
+
+
 
         setupListener()
 
@@ -47,6 +45,9 @@ class LoginFragment : Fragment(), View.OnClickListener {
     }
 
     private fun setupListener() {
+        Log.d(TAG, "setupListener: 진입")
+
+
         v.login_start_button.setOnClickListener(this)
         v.autoLogin_checkBox.setOnClickListener(this)
         v.email_find.setOnClickListener(this)
@@ -109,9 +110,13 @@ class LoginFragment : Fragment(), View.OnClickListener {
 
     }
 
+
     override fun onClick(p0: View?) {
+        Log.d(TAG, "onClick: 갑자기 뭐야 이거")
         when (p0!!.id) {
+
             R.id.login_start_button -> {
+                Log.d(TAG, "onClick: 버튼 클릭")
                 startActivity(Intent(activity, Bottom::class.java))
             }
             R.id.autoLogin_checkBox -> {
@@ -127,11 +132,13 @@ class LoginFragment : Fragment(), View.OnClickListener {
 //                Navigation.findNavController(v)
 //                    .navigate(R.id.action_loginFragment_to_findIDFragment)
             }
-            R.id. password_find ->{
+            R.id.password_find -> {
                 PasswordResetFragment().replaceFragment(R.id.fragment, requireActivity())
 
             }
         }
 
     }
+
+
 }

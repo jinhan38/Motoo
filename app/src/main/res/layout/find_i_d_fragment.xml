@@ -157,11 +157,7 @@
                         android:id="@+id/frameLayout2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="30dp"
-                        android:orientation="horizontal"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/login_start_button">
+                        android:orientation="horizontal">
 
                         <View
                             android:layout_width="match_parent"
@@ -220,10 +216,7 @@
                     <View
                         android:id="@+id/view3"
                         android:layout_width="match_parent"
-                        android:layout_height="48dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent" />
+                        android:layout_height="48dp" />
                 </LinearLayout>
 
             </LinearLayout>

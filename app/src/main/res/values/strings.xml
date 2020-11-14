@@ -62,5 +62,12 @@
     <string name="오천원탭">5천원</string>
     <string name="만원탭">1만원</string>
     <string name="이만원탭">2만원</string>
+    <string name="rankingGameExplain_1">총참가자 인원수에 따라 조편성이 안되는 경우 참가 신청 순서에 따라 마지막 조까지만 편성합니다.
+    </string>
+    <string name="rankingGameExplain_2">
+        조 편성이 안된 참가자는 참가비가 환급됩니다.
+    </string>
+    <string name="rankingGameExplain_3">예시 : 3인 1조 경기 | 참가인원 59명 | 19개 조 편성 | 2명 참가비 환급
+    </string>
 
 </resources>

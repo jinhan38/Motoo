@@ -11,7 +11,6 @@ import androidx.core.view.ViewCompat
 import io.motoo.www.R
 import io.motoo.www.others.Utils
 import io.motoo.www.others.onMyTextChanged
-import kotlinx.android.synthetic.main.fragment_login.view.*
 import kotlinx.android.synthetic.main.fragment_password_reset.view.*
 
 class PasswordResetFragment : Fragment() {
