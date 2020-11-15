@@ -1,12 +1,16 @@
 package io.motoo.www.others
 
+import android.app.Activity
 import android.content.ContentValues
 import android.content.Context
+import android.os.Build
 import android.text.Html
 import android.text.Spannable
 import android.text.SpannableStringBuilder
 import android.text.style.ForegroundColorSpan
 import android.util.Log
+import android.view.View
+import android.view.WindowManager
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
@@ -88,8 +92,16 @@ class Utils {
             }
         }
 
+        fun setStatusBarColor(activity : Activity, color: Int) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                activity.window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+                activity.window.statusBarColor = color
+                activity.window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+            }
+        }
 
     }
+
 
 
 }

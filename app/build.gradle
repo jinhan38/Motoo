@@ -71,4 +71,8 @@ dependencies {
     implementation "com.github.JeovaniMartinez:AndroidViewPagerIndicator:0.1.0"
     implementation 'com.tbuonomo.andrui:viewpagerdotsindicator:4.1.2'
 
+    //circle imageview
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+
 }

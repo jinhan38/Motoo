@@ -90,12 +90,13 @@ class GameFragment : Fragment(), View.OnClickListener, DetailInfoClickListener {
 
     fun recyclerViewSetting() {
 
+        gameDataList.clear()
         gameDataList.add("1")
         gameDataList.add("2")
         gameDataList.add("3")
-        gameDataList.add("4")
-        gameDataList.add("5")
-        gameDataList.add("6")
+//        gameDataList.add("4")
+//        gameDataList.add("5")
+//        gameDataList.add("6")
 
         b.recyclerViewGameInfo.apply {
             var layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, true)

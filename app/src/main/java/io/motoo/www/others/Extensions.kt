@@ -68,3 +68,6 @@ fun TabLayout.tabLayoutController(completion: (tab: TabLayout.Tab?) -> Unit) {
     })
 
 }
+
+fun Fragment.addOnWindowFocusChangeListener(callback: (hasFocus: Boolean) -> Unit) =
+    view?.viewTreeObserver?.addOnWindowFocusChangeListener { callback.invoke(it) }

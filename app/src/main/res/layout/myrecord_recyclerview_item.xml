@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:layout_weight="100"
+    android:background="@drawable/bg_border_gray_1dp"
+    android:orientation="horizontal">
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="30"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="2020-10-21 13:00"
+        android:textColor="#36364b"
+        android:textSize="12sp"
+        android:textStyle="normal" />
+
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="20"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="랭킹전"
+        android:textColor="#36364b"
+        android:textSize="12sp"
+        android:textStyle="normal" />
+
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="20"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="1위"
+        android:textColor="#36364b"
+        android:textSize="12sp"
+        android:textStyle="normal" />
+
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="30"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="#RN-2020-1003-2030-123"
+        android:textColor="#36364b"
+        android:textSize="12sp"
+        android:textStyle="normal" />
+
+
+</LinearLayout>

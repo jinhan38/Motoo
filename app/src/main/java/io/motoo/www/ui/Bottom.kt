@@ -110,6 +110,7 @@ class Bottom : BaseActivity(), View.OnClickListener {
 
     }
 
+    
 
     fun fragmentChange(fragment: Fragment) {
 
