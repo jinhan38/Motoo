@@ -59,8 +59,15 @@
         <item name="colorControlNormal">@color/primary_blue</item>
     </style>
 
-    <style name="EditThemeError" parent="Theme.AppCompat.Light.NoActionBar">
+    <!--    EditText 밑줄, 커서 컬러 변경-->
+    <style name="EditThemeGray" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--        커서-->
+        <item name="colorAccent">#e1e1e1</item>
+        <!--        밑줄-->
+        <item name="colorControlNormal">#e1e1e1</item>
+    </style>
 
+    <style name="EditThemeError" parent="Theme.AppCompat.Light.NoActionBar">
 
         <item name="colorAccent">@color/red</item>
         <item name="colorPrimary">@color/red</item>

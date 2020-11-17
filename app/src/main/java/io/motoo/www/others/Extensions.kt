@@ -1,15 +1,18 @@
 package io.motoo.www.others
 
 import android.content.ContentValues.TAG
+import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.FragmentTransaction
 import androidx.fragment.app.commit
 import com.google.android.material.tabs.TabLayout
 import io.motoo.www.R
+import io.motoo.www.ui.mypage.MyPageWithdrawMoney.MyPageWithdrawMoneyFragment
 
 
 fun EditText.onMyTextChanged(completion: (Editable?) -> Unit) {
@@ -48,6 +51,7 @@ fun Fragment.replaceFragment(containerView: Int, activity: FragmentActivity) {
     }
 
 }
+
 
 fun TabLayout.tabLayoutController(completion: (tab: TabLayout.Tab?) -> Unit) {
     this.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {

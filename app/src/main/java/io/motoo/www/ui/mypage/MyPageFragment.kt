@@ -1,18 +1,16 @@
 package io.motoo.www.ui.mypage
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.commit
 import androidx.recyclerview.widget.LinearLayoutManager
 import io.motoo.www.R
-import io.motoo.www.others.Utils
 import io.motoo.www.others.replaceFragment
-import io.motoo.www.ui.game.gameDateMenu.GameInfoAdapter
+import io.motoo.www.ui.mypage.MyPageWithdrawMoney.MyPageWithdrawMoneyFragment
 import io.motoo.www.ui.mypage.gameRecord.GameRecordFragment
-import io.motoo.www.ui.signUp.SignUpProfile
 import kotlinx.android.synthetic.main.fragment_mypage.view.*
 
 class MyPageFragment : Fragment(), ItemClickListener {
@@ -58,6 +56,7 @@ class MyPageFragment : Fragment(), ItemClickListener {
 
         dataList.add("1")
         dataList.add("2")
+        dataList.add("3")
 
         v.myPage_recyclerView.apply {
             var layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
@@ -71,14 +70,48 @@ class MyPageFragment : Fragment(), ItemClickListener {
     }
 
 
-    override fun onClickListener(position: Int, text: String) {
-        Log.d(TAG, "onClickListener: 포지션 확인 $position")
-        Log.d(TAG, "onClickListener: $text")
-        if (text == 출금하기) {
+    override fun onClickListener(position: Int, typeNum: Int) {
 
-        } else if (text == 경기기록) {
-            GameRecordFragment().replaceFragment(R.id.fragment_container, requireActivity())
+        when (typeNum) {
+            1 -> {
+                GameRecordFragment().replaceFragment(R.id.fragment_container, requireActivity())
+            }
+            2 -> {
 
+                parentFragmentManager.commit {
+                    setCustomAnimations(
+                        R.anim.slide_in,
+                        R.anim.fade_out,
+                        R.anim.fade_in,
+                        R.anim.slide_out
+                    )
+                    replace(
+                        R.id.fragment_container,
+                        MyPageWithdrawMoneyFragment.newInstance(2)
+                    )
+                    addToBackStack(null)
+                }
+
+
+            }
+
+            3 -> {
+
+                parentFragmentManager.commit {
+
+                    setCustomAnimations(
+                        R.anim.slide_in,
+                        R.anim.fade_out,
+                        R.anim.fade_in,
+                        R.anim.slide_out
+                    )
+                    replace(
+                        R.id.fragment_container,
+                        MyPageWithdrawMoneyFragment.newInstance(3)
+                    )
+                    addToBackStack(null)
+                }
+            }
         }
 
     }

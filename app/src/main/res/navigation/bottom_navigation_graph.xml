@@ -8,7 +8,20 @@
         android:id="@+id/gameFragment"
         android:name="io.motoo.www.ui.game.GameFragment"
         android:label="fragment_game"
-        tools:layout="@layout/fragment_game" />
+        tools:layout="@layout/fragment_game" >
+        <action
+            android:id="@+id/action_gameFragment_to_firstGameEventFragment"
+            app:destination="@id/firstGameEventFragment" />
+        <action
+            android:id="@+id/action_gameFragment_to_secondGameEventFragment"
+            app:destination="@id/secondGameEventFragment" />
+        <action
+            android:id="@+id/action_gameFragment_to_thirdGameEventFragment"
+            app:destination="@id/thirdGameEventFragment" />
+        <action
+            android:id="@+id/action_gameFragment_to_gameRankingDetailInfoActivity"
+            app:destination="@id/gameRankingDetailInfoActivity" />
+    </fragment>
     <fragment
         android:id="@+id/marketFragment"
         android:name="io.motoo.www.ui.market.MarketFragment"
@@ -20,7 +33,45 @@
         android:label="fragment_portfolio"
         tools:layout="@layout/fragment_portfolio" />
     <fragment
+        android:id="@+id/firstGameEventFragment"
+        android:name="io.motoo.www.ui.game.eventViewPager.FirstGameEventFragment"
+        android:label="fragment_first"
+        tools:layout="@layout/fragment_first" />
+    <fragment
+        android:id="@+id/secondGameEventFragment"
+        android:name="io.motoo.www.ui.game.eventViewPager.SecondGameEventFragment"
+        android:label="fragment_second"
+        tools:layout="@layout/fragment_second" />
+    <fragment
+        android:id="@+id/thirdGameEventFragment"
+        android:name="io.motoo.www.ui.game.eventViewPager.ThirdGameEventFragment"
+        android:label="fragment_third"
+        tools:layout="@layout/fragment_third" />
+    <activity
+        android:id="@+id/gameRankingDetailInfoActivity"
+        android:name="io.motoo.www.ui.game.GameRankingDetailInfoActivity"
+        android:label="activity_game_ranking_detail_info"
+        tools:layout="@layout/activity_game_ranking_detail_info" />
+    <fragment
         android:id="@+id/myPageFragment"
         android:name="io.motoo.www.ui.mypage.MyPageFragment"
-        android:label="MyPageFragment" />
+        android:label="fragment_mypage"
+        tools:layout="@layout/fragment_mypage" >
+        <action
+            android:id="@+id/action_myPageFragment_to_gameRecordFragment"
+            app:destination="@id/gameRecordFragment" />
+        <action
+            android:id="@+id/action_myPageFragment_to_myPageWithdrawMoneyFragment"
+            app:destination="@id/myPageWithdrawMoneyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameRecordFragment"
+        android:name="io.motoo.www.ui.mypage.gameRecord.GameRecordFragment"
+        android:label="fragment_game_record"
+        tools:layout="@layout/fragment_game_record" />
+    <fragment
+        android:id="@+id/myPageWithdrawMoneyFragment"
+        android:name="io.motoo.www.ui.mypage.MyPageWithdrawMoney.MyPageWithdrawMoneyFragment"
+        android:label="fragment_my_page_withdraw_money"
+        tools:layout="@layout/fragment_my_page_withdraw_money" />
 </navigation>

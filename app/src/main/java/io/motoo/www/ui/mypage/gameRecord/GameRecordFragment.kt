@@ -76,9 +76,15 @@ class GameRecordFragment : Fragment() {
 
     }
 
-    override fun onResume() {
-        super.onResume()
 
-//        Utils.setStatusBarColor(requireActivity(), Color.WHITE)
+    override fun onStop() {
+        super.onStop()
+        Utils.setStatusBarColorBlue(requireActivity(), resources.getColor(R.color.primary_blue, null))
     }
+
+    override fun onStart() {
+        super.onStart()
+        Utils.setStatusBarColorWhite(requireActivity(), Color.WHITE)
+    }
+
 }

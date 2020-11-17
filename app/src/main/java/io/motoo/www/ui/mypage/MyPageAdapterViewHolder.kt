@@ -9,21 +9,35 @@ class MyPageAdapterViewHolder(itemView: View, private val itemClickListener: Ite
     RecyclerView.ViewHolder(itemView) {
 
 
-    var button = itemView.findViewById<TextView>(R.id.mypage_recyclerView_item_button)
+    var mypage_recyclerView_item_button =
+        itemView.findViewById<TextView>(R.id.mypage_recyclerView_item_button)
+    var moneyType = itemView.findViewById<TextView>(R.id.moneyType)
 
 
     fun bindWithView() {
 
-        if (adapterPosition ==1){
-            button.text = "경기기록"
+        var typeNum = 0
+        if (adapterPosition == 1) {
+            moneyType.text = "누적 상금액"
+            mypage_recyclerView_item_button.text = "경기기록"
+            typeNum = 1
 
-        }else{
-            button.text = "출금하기"
+        } else if (adapterPosition == 2) {
+            moneyType.text = "상금 잔액"
+            mypage_recyclerView_item_button.text = "출금하기"
+            typeNum = 2
+        } else {
+            moneyType.text = "캐시 잔액"
+            mypage_recyclerView_item_button.text = "출금하기"
+            typeNum = 3
         }
 
 
-        button.setOnClickListener {
-            itemClickListener.onClickListener(adapterPosition, button.text.toString())
+        mypage_recyclerView_item_button.setOnClickListener {
+            itemClickListener.onClickListener(
+                adapterPosition,
+                typeNum
+            )
         }
     }
 

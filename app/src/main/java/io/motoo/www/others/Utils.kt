@@ -3,6 +3,7 @@ package io.motoo.www.others
 import android.app.Activity
 import android.content.ContentValues
 import android.content.Context
+import android.content.res.Configuration
 import android.os.Build
 import android.text.Html
 import android.text.Spannable
@@ -16,6 +17,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.commit
 import io.motoo.www.R
+import java.text.DecimalFormat
 import java.util.*
 import java.util.regex.Pattern
 
@@ -92,7 +94,7 @@ class Utils {
             }
         }
 
-        fun setStatusBarColor(activity : Activity, color: Int) {
+        fun setStatusBarColorWhite(activity: Activity, color: Int) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 activity.window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
                 activity.window.statusBarColor = color
@@ -100,8 +102,43 @@ class Utils {
             }
         }
 
-    }
 
+        fun setStatusBarColorBlue(activity: Activity, color: Int) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                activity.window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+                activity.window.statusBarColor = color
+                activity.window.decorView.systemUiVisibility = Configuration.UI_MODE_NIGHT_MASK
+            }
+        }
+
+
+        fun GetNumFormat(num: Int): String? {
+            val df = DecimalFormat("#,###")
+            return if (num >= 10000) {
+                val bilTemp = num / 10000
+                val bil = df.format(bilTemp.toLong()) + "억"
+                val milTemp = num - bilTemp * 10000
+                if (milTemp > 0) {
+                    val mil = df.format(milTemp.toLong()) + " 만원"
+                    "$bil $mil"
+                } else {
+                    bil + "원"
+                }
+            } else {
+                df.format(num.toLong()) + " 만원"
+            }
+        }
+
+
+        fun GetNumFormatWon(price: Int): String? {
+
+            val myFormatter = DecimalFormat("###,###")
+            val formattedStringPrice: String = myFormatter.format(price)
+            return "$formattedStringPrice"
+        }
+
+
+    }
 
 
 }
