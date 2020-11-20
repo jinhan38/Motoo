@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.mypage.setting.SettingFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetStart="0dp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/back_button"
+                    android:layout_width="28dp"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:layout_height="28dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="14dp"
+                    android:src="@drawable/ic_arrow_left" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="설정"
+                    android:textColor="#2e2e2e"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+
+            </FrameLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:background="@color/border_light" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="64dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="63dp"
+                android:fontFamily="@font/noto_sans_kr_medium"
+                android:gravity="center_vertical"
+                android:paddingLeft="33dp"
+                android:text="프로필 설정"
+                android:textColor="#36364b"
+                android:textSize="16sp" />
+
+            <ImageButton
+                android:id="@+id/profile_edit_button"
+                android:layout_width="38dp"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/border_light" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="64dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="63dp"
+                android:fontFamily="@font/noto_sans_kr_medium"
+                android:gravity="center_vertical"
+                android:paddingLeft="33dp"
+                android:text="알림 설정"
+                android:textColor="#36364b"
+                android:textSize="16sp" />
+
+
+            <ImageButton
+                android:id="@+id/alarm_edit_button"
+                android:layout_width="38dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="10dp"
+                android:background="@null"
+                android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/border_light" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="64dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="63dp"
+                android:fontFamily="@font/noto_sans_kr_medium"
+                android:gravity="center_vertical"
+                android:paddingLeft="33dp"
+                android:text="자주묻는 질문"
+                android:textColor="#36364b"
+                android:textSize="16sp" />
+
+
+            <ImageButton
+                android:id="@+id/frequent_question"
+                android:layout_width="38dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="10dp"
+                android:background="@null"
+                android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/border_light" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="64dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="63dp"
+                android:fontFamily="@font/noto_sans_kr_medium"
+                android:gravity="center_vertical"
+                android:paddingLeft="33dp"
+                android:text="공지사항"
+                android:textColor="#36364b"
+                android:textSize="16sp" />
+
+
+            <ImageButton
+                android:id="@+id/notice_board"
+                android:layout_width="38dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="10dp"
+                android:background="@null"
+                android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/border_light" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="64dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="63dp"
+                android:fontFamily="@font/noto_sans_kr_medium"
+                android:gravity="center_vertical"
+                android:paddingLeft="33dp"
+                android:text="1:1 문의"
+                android:textColor="#36364b"
+                android:textSize="16sp" />
+
+
+            <ImageButton
+                android:id="@+id/privacy_question"
+                android:layout_width="38dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="10dp"
+                android:background="@null"
+                android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/border_light" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="64dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="63dp"
+                android:fontFamily="@font/noto_sans_kr_medium"
+                android:gravity="center_vertical"
+                android:paddingLeft="33dp"
+                android:text="개선사항 및 경기제안"
+                android:textColor="#36364b"
+                android:textSize="16sp" />
+
+
+            <ImageButton
+                android:id="@+id/improveAndSuggestion"
+                android:layout_width="38dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="10dp"
+                android:background="@null"
+                android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/border_light" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="64dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="63dp"
+
+                android:fontFamily="@font/noto_sans_kr_medium"
+                android:gravity="center_vertical"
+                android:paddingLeft="33dp"
+                android:text="친구 초대하고 캐시받기"
+                android:textColor="#36364b"
+                android:textSize="16sp" />
+
+
+            <ImageButton
+                android:id="@+id/inviteAndGetCash"
+                android:layout_width="38dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="10dp"
+                android:background="@null"
+                android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/border_light" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+</layout>

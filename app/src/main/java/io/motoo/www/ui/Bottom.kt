@@ -106,10 +106,6 @@ class Bottom : BaseActivity(), View.OnClickListener {
         }
     }
 
-    override fun onClick(p0: View?) {
-
-    }
-
     
 
     fun fragmentChange(fragment: Fragment) {
@@ -126,5 +122,8 @@ class Bottom : BaseActivity(), View.OnClickListener {
     override fun onBackPressed() {
         super.onBackPressed()
         Log.d(TAG, "onBackPressed: ")
+    }
+
+    override fun onClick(p0: View?) {
     }
 }

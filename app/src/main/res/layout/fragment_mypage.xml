@@ -46,6 +46,17 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <ImageView
+                            android:id="@+id/settingImageView"
+                            android:layout_width="wrap_content"
+                            android:padding="10dp"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_baseline_settings_24"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/ic_alarm"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/ic_alarm"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginRight="10dp"
@@ -82,6 +93,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <ImageView
+                        android:id="@+id/profile_image_edit"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
@@ -104,7 +116,7 @@
                 android:textStyle="bold" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="409dp"
+                android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_marginTop="32dp"
                 android:background="@drawable/bg_border_gray_1dp"

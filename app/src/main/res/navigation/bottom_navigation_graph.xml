@@ -63,6 +63,9 @@
         <action
             android:id="@+id/action_myPageFragment_to_myPageWithdrawMoneyFragment"
             app:destination="@id/myPageWithdrawMoneyFragment" />
+        <action
+            android:id="@+id/action_myPageFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
     </fragment>
     <fragment
         android:id="@+id/gameRecordFragment"
@@ -74,4 +77,9 @@
         android:name="io.motoo.www.ui.mypage.MyPageWithdrawMoney.MyPageWithdrawMoneyFragment"
         android:label="fragment_my_page_withdraw_money"
         tools:layout="@layout/fragment_my_page_withdraw_money" />
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="io.motoo.www.ui.mypage.setting.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" />
 </navigation>
