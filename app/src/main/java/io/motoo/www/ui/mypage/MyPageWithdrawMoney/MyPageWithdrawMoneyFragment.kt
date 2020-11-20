@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import io.motoo.www.R
 import io.motoo.www.databinding.FragmentMyPageWithdrawMoneyBinding
+import io.motoo.www.others.NumberTextWatcher
 import io.motoo.www.others.Utils
 import io.motoo.www.others.onMyTextChanged
 import java.lang.Exception
@@ -67,22 +68,23 @@ class MyPageWithdrawMoneyFragment : Fragment() {
 
         }
 
-//        b.inputWithdrawMoney.onMyTextChanged { text ->
-//            if (text!!.isNotEmpty()) {
-//                Log.d(TAG, "onCreateView: $text")
-//
-//
-//                var strText = text.toString().replace(",", "").replace("원", "").replace(" ", "")
-//                var price: Int = strText.toInt()
-//                Log.d(TAG, "onCreateView: price : $price")
-//
-//                try {
-//                    b.inputWithdrawMoney.setText(Utils.GetNumFormatWon(price) + "원")
-//                } catch (e: Exception) {
-//                    Log.d(TAG, "onCreateView: error : $e")
-//                }
-//            }
-//        }
+        b.inputWithdrawMoney.addTextChangedListener(NumberTextWatcher(b.inputWithdrawMoney))
+        b.inputWithdrawMoney.onMyTextChanged { text ->
+            if (text!!.isNotEmpty()) {
+                Log.d(TAG, "onCreateView: $text")
+
+
+                var strText = text.toString().replace(",", "").replace("원", "").replace(" ", "")
+                if (strText.toInt() < 5000){
+                    Log.d(TAG, "onCreateView: 5천원 미만")
+                }
+
+                try {
+                } catch (e: Exception) {
+                    Log.d(TAG, "onCreateView: error : $e")
+                }
+            }
+        }
 
         return b.root
 
