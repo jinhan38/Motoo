@@ -81,5 +81,55 @@
         android:id="@+id/settingFragment"
         android:name="io.motoo.www.ui.mypage.setting.SettingFragment"
         android:label="fragment_setting"
-        tools:layout="@layout/fragment_setting" />
+        tools:layout="@layout/fragment_setting" >
+        <action
+            android:id="@+id/action_settingFragment_to_profileEditFragment"
+            app:destination="@id/profileEditFragment" />
+        <action
+            android:id="@+id/action_settingFragment_to_FAQFragment"
+            app:destination="@id/FAQFragment" />
+        <action
+            android:id="@+id/action_settingFragment_to_noticeFragment"
+            app:destination="@id/noticeFragment" />
+        <action
+            android:id="@+id/action_settingFragment_to_alarmFragment"
+            app:destination="@id/alarmFragment" />
+        <action
+            android:id="@+id/action_settingFragment_to_oneOneContactFragment"
+            app:destination="@id/oneOneContactFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileEditFragment"
+        android:name="io.motoo.www.ui.mypage.setting.profile.ProfileEditFragment"
+        android:label="fragment_profile_edit"
+        tools:layout="@layout/fragment_profile_edit" />
+    <fragment
+        android:id="@+id/FAQFragment"
+        android:name="io.motoo.www.ui.mypage.setting.faq.FAQFragment"
+        android:label="fragment_f_a_q"
+        tools:layout="@layout/fragment_f_a_q" />
+    <fragment
+        android:id="@+id/noticeFragment"
+        android:name="io.motoo.www.ui.mypage.setting.notice.NoticeFragment"
+        android:label="fragment_notice"
+        tools:layout="@layout/fragment_notice" >
+        <action
+            android:id="@+id/action_noticeFragment_to_noticeDetailFragment"
+            app:destination="@id/noticeDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/noticeDetailFragment"
+        android:name="io.motoo.www.ui.mypage.setting.notice.NoticeDetailFragment"
+        android:label="fragment_notice_detail"
+        tools:layout="@layout/fragment_notice_detail" />
+    <fragment
+        android:id="@+id/alarmFragment"
+        android:name="io.motoo.www.ui.mypage.setting.alarm.AlarmFragment"
+        android:label="fragment_alarm"
+        tools:layout="@layout/fragment_alarm" />
+    <fragment
+        android:id="@+id/oneOneContactFragment"
+        android:name="io.motoo.www.ui.mypage.setting.oneoncContact.OneOneContactFragment"
+        android:label="fragment_one_one_contact"
+        tools:layout="@layout/fragment_one_one_contact" />
 </navigation>

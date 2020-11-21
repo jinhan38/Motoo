@@ -32,11 +32,6 @@ class SignUpVerification : Fragment() {
             activity?.onBackPressed()
         }
 
-
-        val stringCategory = ArrayList<String>()
-
-        stringCategory.add("한국")
-        stringCategory.add("+82")
         
         ArrayAdapter.createFromResource(
             requireActivity(),

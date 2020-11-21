@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentTransaction
 import io.motoo.www.R
 import io.motoo.www.common.BaseActivity
 import io.motoo.www.databinding.ActivityBottomBinding
+import io.motoo.www.others.Utils
 import io.motoo.www.others.replaceFragment
 import io.motoo.www.ui.game.GameFragment
 import io.motoo.www.ui.game.eventViewPager.ViewPagerAdapter
@@ -38,6 +39,9 @@ class Bottom : BaseActivity(), View.OnClickListener {
         context = this
         b = DataBindingUtil.setContentView(this, R.layout.activity_bottom)
 
+        Utils.setStatusBarColorBlue(
+            this, resources.getColor(R.color.primary_blue, null)
+        )
 
         transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragment_container, GameFragment.getInstance(), "game").commit()
@@ -106,7 +110,6 @@ class Bottom : BaseActivity(), View.OnClickListener {
         }
     }
 
-    
 
     fun fragmentChange(fragment: Fragment) {
 
@@ -126,4 +129,6 @@ class Bottom : BaseActivity(), View.OnClickListener {
 
     override fun onClick(p0: View?) {
     }
+
+
 }

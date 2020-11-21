@@ -112,11 +112,9 @@ class LoginStartFragment : Fragment(), View.OnClickListener {
 
 
     override fun onClick(p0: View?) {
-        Log.d(TAG, "onClick: 갑자기 뭐야 이거")
         when (p0!!.id) {
 
             R.id.login_start_button -> {
-                Log.d(TAG, "onClick: 버튼 클릭")
                 startActivity(Intent(activity, Bottom::class.java))
             }
             R.id.autoLogin_checkBox -> {

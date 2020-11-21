@@ -3,6 +3,7 @@ package io.motoo.www.others
 import android.app.Activity
 import android.content.ContentValues
 import android.content.Context
+import android.content.res.ColorStateList
 import android.content.res.Configuration
 import android.os.Build
 import android.text.Html
@@ -12,11 +13,14 @@ import android.text.style.ForegroundColorSpan
 import android.util.Log
 import android.view.View
 import android.view.WindowManager
+import android.widget.EditText
 import android.widget.TextView
+import androidx.core.view.ViewCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.commit
 import io.motoo.www.R
+import kotlinx.android.synthetic.main.fragment_login_start.view.*
 import java.text.DecimalFormat
 import java.util.*
 import java.util.regex.Pattern
@@ -135,6 +139,25 @@ class Utils {
             val myFormatter = DecimalFormat("###,###")
             val formattedStringPrice: String = myFormatter.format(price)
             return "$formattedStringPrice"
+        }
+
+        fun editTextUnderLineBlue(activity : Activity, editText : EditText){
+            val colorStateListBlue =
+                ColorStateList.valueOf(activity.resources.getColor(R.color.primary_blue, null))
+            ViewCompat.setBackgroundTintList(editText, colorStateListBlue)
+        }
+
+
+fun editTextUnderLineRed(activity : Activity, editText : EditText){
+    val colorStateListRed =
+        ColorStateList.valueOf(activity.resources.getColor(R.color.red, null))
+    ViewCompat.setBackgroundTintList(editText, colorStateListRed)
+}
+
+        fun editTextUnderLineGray(activity : Activity, editText : EditText){
+            val colorStateListRed =
+                ColorStateList.valueOf(activity.resources.getColor(R.color.border_dark, null))
+            ViewCompat.setBackgroundTintList(editText, colorStateListRed)
         }
 
 

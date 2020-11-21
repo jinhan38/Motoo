@@ -63,11 +63,7 @@ class MyPageFragment : Fragment(), ItemClickListener, View.OnClickListener {
 
         setupListener()
         b.profileImageEdit.setOnClickListener {
-            Log.d(TAG, "onCreateView: 편집 클릭")
-//            CropImage.activity().start(requireActivity(), this)
-            CropImage.activity()
-                .setGuidelines(CropImageView.Guidelines.ON)
-                .start(requireActivity());
+            CropImage.activity().start(requireActivity(), this)
         }
 
         recyclerViewSetting()
@@ -157,10 +153,6 @@ class MyPageFragment : Fragment(), ItemClickListener, View.OnClickListener {
             R.id.settingImageView -> {
                 Bottom.context.fragmentChange(SettingFragment())
             }
-//            R.id.profile_edit_button -> {
-//                Log.d(TAG, "onClick: 편집 클릭")
-//                CropImage.activity().start(requireActivity(), this)
-//            }
         }
     }
 
@@ -174,5 +166,7 @@ class MyPageFragment : Fragment(), ItemClickListener, View.OnClickListener {
                 val error = result.error
             }
         }
+
     }
+
 }

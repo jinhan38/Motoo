@@ -1,4 +1,4 @@
-package io.motoo.www.ui.mypage.setting
+package io.motoo.www.ui.mypage.setting.profile
 
 import android.graphics.Color
 import android.os.Bundle
@@ -11,9 +11,22 @@ import io.motoo.www.R
 import io.motoo.www.databinding.FragmentProfileEditBinding
 import io.motoo.www.others.Utils
 import io.motoo.www.ui.Bottom
+import io.motoo.www.ui.mypage.setting.alarm.AlarmFragment
 
 class ProfileEditFragment : Fragment(), View.OnClickListener {
 
+    companion object {
+
+        @Volatile
+        private var instance: ProfileEditFragment? = null
+
+        fun getInstance(): ProfileEditFragment =
+            instance ?: synchronized(this) {
+                instance ?: ProfileEditFragment().also {
+                    instance = it
+                }
+            }
+    }
 
     lateinit var b: FragmentProfileEditBinding
     override fun onCreateView(
