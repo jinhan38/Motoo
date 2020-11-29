@@ -16,6 +16,7 @@
     <string name="terms_marketing">[선택] 마케팅 정보 수신 동의</string>
     <string name="terms_marketing_privacy">[선택] 마케팅 개인정보 수신 동의</string>
     <string name="explainText_1">∙출금 신청하신 금액은 평일 오후 7시에 출금됩니다.</string>
+    <string name="event_search_hint_text">종목명  • 초성 • 코드 • 심볼 검색으로 종목 추가</string>
     <string-array name="planets_array">
         <item>Mercury</item>
         <item>Venus</item>

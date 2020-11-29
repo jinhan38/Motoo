@@ -15,6 +15,7 @@ import io.motoo.www.others.replaceFragment
 import io.motoo.www.ui.game.GameFragment
 import io.motoo.www.ui.game.eventViewPager.ViewPagerAdapter
 import io.motoo.www.ui.market.MarketFragment
+import io.motoo.www.ui.market.MarketNoEventDataFragment
 import io.motoo.www.ui.mypage.MyPageFragment
 import io.motoo.www.ui.portfolio.PortfolioFragment
 
@@ -65,10 +66,13 @@ class Bottom : BaseActivity(), View.OnClickListener {
 
     override fun setupLister() {
 
+        // 페이지 로드의 속도나현재 상황들을 유지해야할 경우는 show hide
+        //새로 view를 그리거나 업데이트 해야할 때는 replace로 처리
+        //이후에 진행상황 보고 변경할 것
+
         b.navView.setOnNavigationItemSelectedListener { item ->
 
             transaction = supportFragmentManager.beginTransaction()
-
 
             when (item.itemId) {
                 R.id.navigation_game -> {

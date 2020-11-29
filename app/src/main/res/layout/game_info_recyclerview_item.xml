@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="24dp"
         android:layout_marginVertical="12dp"
-        android:elevation="10dp"
+        android:elevation="20dp"
         app:cardCornerRadius="4dp">
 
         <LinearLayout
@@ -32,7 +32,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_centerVertical="true"
                     android:gravity="left"
-                    android:text="모투 첼린지"
+                    android:text="모투 챌린지"
                     android:textColor="@color/font_dark"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -66,94 +66,97 @@
                     android:textSize="14sp" />
 
                 <TextView
+                    android:id="@+id/playMoney"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:text="1,000만원"
+                    tools:text="100만원"
                     android:textColor="@color/font_dark"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
             </RelativeLayout>
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:orientation="horizontal">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:text="참가비"
-                    android:textSize="14sp" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_centerVertical="true"
+                                android:text="참가비"
+                                android:textSize="14sp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:text="없음"
-                    android:textColor="@color/font_dark"
-                    android:textSize="14sp"
-                    tools:ignore="RtlHardcoded" />
+                            <TextView
+                                android:id="@+id/participationFee"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:textStyle="bold"
+                                tools:text="없음"
+                                android:textColor="@color/font_dark"
+                                android:textSize="14sp"
+                                tools:ignore="RtlHardcoded" />
 
-            </RelativeLayout>
+                        </RelativeLayout>
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:orientation="horizontal">
+            <!--            <RelativeLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="8dp"-->
+            <!--                android:orientation="horizontal">-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:text="우승상금"
-                    android:textSize="14sp" />
+            <!--                <TextView-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_alignParentLeft="true"-->
+            <!--                    android:layout_centerVertical="true"-->
+            <!--                    android:text="우승상금"-->
+            <!--                    android:textSize="14sp" />-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:text="없음"
-                    android:textColor="@color/font_dark"
-                    android:textSize="14sp"
-                    tools:ignore="RtlHardcoded" />
+            <!--                <TextView-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_alignParentRight="true"-->
+            <!--                    android:layout_centerVertical="true"-->
+            <!--                    android:text="없음"-->
+            <!--                    android:textColor="@color/font_dark"-->
+            <!--                    android:textSize="14sp"-->
+            <!--                    tools:ignore="RtlHardcoded" />-->
 
-            </RelativeLayout>
+            <!--            </RelativeLayout>-->
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:orientation="horizontal">
+            <!--            <RelativeLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="8dp"-->
+            <!--                android:orientation="horizontal">-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:text="참가인원"
-                    android:textSize="14sp" />
+            <!--                <TextView-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_alignParentLeft="true"-->
+            <!--                    android:layout_centerVertical="true"-->
+            <!--                    android:text="참가인원"-->
+            <!--                    android:textSize="14sp" />-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:text="무제한"
-                    android:textColor="@color/font_dark"
-                    android:textSize="14sp"
-                    tools:ignore="RtlHardcoded" />
+            <!--                <TextView-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_alignParentRight="true"-->
+            <!--                    android:layout_centerVertical="true"-->
+            <!--                    android:text="무제한"-->
+            <!--                    android:textColor="@color/font_dark"-->
+            <!--                    android:textSize="14sp"-->
+            <!--                    tools:ignore="RtlHardcoded" />-->
 
-            </RelativeLayout>
+            <!--            </RelativeLayout>-->
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -170,11 +173,13 @@
                     android:textSize="14sp" />
 
                 <TextView
+                    android:id="@+id/gameTime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:text="무제한"
+                    android:gravity="right"
+                    android:text="09:00 ~ 09:50"
                     android:textColor="@color/font_dark"
                     android:textSize="14sp"
                     tools:ignore="RtlHardcoded" />

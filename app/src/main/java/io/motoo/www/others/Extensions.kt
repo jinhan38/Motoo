@@ -21,16 +21,12 @@ fun EditText.onMyTextChanged(completion: (Editable?) -> Unit) {
         override fun afterTextChanged(editable: Editable?) {
             completion(editable)
         }
-
         override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
         }
-
         override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
         }
-
-
     })
 
 }
@@ -59,12 +55,9 @@ fun TabLayout.tabLayoutController(completion: (tab: TabLayout.Tab?) -> Unit) {
             Log.d(TAG, "onTabSelected: completion")
             completion(tab)
         }
-
         override fun onTabUnselected(tab: TabLayout.Tab?) {
 
-
         }
-
         override fun onTabReselected(tab: TabLayout.Tab?) {
 
         }

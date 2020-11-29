@@ -23,6 +23,7 @@ import io.motoo.www.ui.game.eventViewPager.ThirdGameEventFragment
 import io.motoo.www.ui.game.eventViewPager.ViewPagerAdapter
 import io.motoo.www.ui.game.gameDateMenu.*
 import io.motoo.www.ui.login.LoginActivity
+import java.text.SimpleDateFormat
 
 class GameFragment : Fragment(), View.OnClickListener, DetailInfoClickListener {
 
@@ -47,7 +48,8 @@ class GameFragment : Fragment(), View.OnClickListener, DetailInfoClickListener {
     lateinit var b: FragmentGameBinding
     lateinit var gameInfoAdapter: GameInfoAdapter
 
-    var gameDataList = ArrayList<String>()
+    var gameTimeList = ArrayList<String>()
+    lateinit var gameDataModel: GameDataModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -61,7 +63,7 @@ class GameFragment : Fragment(), View.OnClickListener, DetailInfoClickListener {
 
         tabLayoutStickyToTop()
         topEventViewPager()
-        recyclerViewSetting()
+        recyclerViewSetting("없음", "1,000만원")
         gameDateMenuViewPager()
 
         return b.root
@@ -88,68 +90,137 @@ class GameFragment : Fragment(), View.OnClickListener, DetailInfoClickListener {
 
     }
 
-    fun recyclerViewSetting() {
+    private fun recyclerViewSetting(participationFee: String, playMoney: String) {
 
-        gameDataList.clear()
-        gameDataList.add("1")
-        gameDataList.add("2")
-        gameDataList.add("3")
+        gameTimeList.clear()
+        gameTimeList.add("09:00 ~ 09:50")
+        gameTimeList.add("10:00 ~ 10:50")
+        gameTimeList.add("11:00 ~ 11:50")
+        gameTimeList.add("12:00 ~ 12:50")
+        gameTimeList.add("13:00 ~ 13:50")
+        gameTimeList.add("14:00 ~ 14:50")
+        gameTimeList.add("15:00 ~ 15:50")
+        gameTimeList.add("16:00 ~ 16:50")
+        gameTimeList.add("17:00 ~ 17:50")
+        gameTimeList.add("18:00 ~ 18:50")
+        gameTimeList.add("19:00 ~ 19:50")
+        gameTimeList.add("20:00 ~ 20:50")
+        gameTimeList.add("21:00 ~ 21:50")
+        gameTimeList.add("22:00 ~ 22:50")
+        
+//        gameTimeList.add("2020-11-29 09:00 \n~ 2020-11-29 09:50")
+//        gameTimeList.add("2020-11-29 10:00 \n~ 2020-11-29 10:50")
+//        gameTimeList.add("2020-11-29 11:00 \n~ 2020-11-29 11:50")
+//        gameTimeList.add("2020-11-29 12:00 \n~ 2020-11-29 12:50")
+//        gameTimeList.add("2020-11-29 13:00 \n~ 2020-11-29 13:50")
+//        gameTimeList.add("2020-11-29 14:00 \n~ 2020-11-29 14:50")
+//        gameTimeList.add("2020-11-29 15:00 \n~ 2020-11-29 15:50")
+//        gameTimeList.add("2020-11-29 16:00 \n~ 2020-11-29 16:50")
+//        gameTimeList.add("2020-11-29 17:00 \n~ 2020-11-29 17:50")
+//        gameTimeList.add("2020-11-29 18:00 \n~ 2020-11-29 18:50")
+//        gameTimeList.add("2020-11-29 19:00 \n~ 2020-11-29 19:50")
+//        gameTimeList.add("2020-11-29 20:00 \n~ 2020-11-29 20:50")
+//        gameTimeList.add("2020-11-29 21:00 \n~ 2020-11-29 21:50")
+//        gameTimeList.add("2020-11-29 22:00 \n~ 2020-11-29 22:50")
+        gameTimeList.reverse()
+
 //        gameDataList.add("4")
 //        gameDataList.add("5")
 //        gameDataList.add("6")
 
+        //특정 날짜가 되면 해당날짜의 9~23시까지 13경기의 시작 시간대를 저장해라
+        //보여줄 시간과, 밀리미세컨드 시간대 두가지가 필요하다.
+        //변하는건 년월일, 안변하는건 시간대
+
+
+        val time = System.currentTimeMillis() //현재시간 밀리세컨드로 불러옴
+        val simpleDateHead = SimpleDateFormat("yyyy-MM-dd") //시작시간 계산 위한 dateFormat
+        val headDate = simpleDateHead.format(time) // 현재시간을 년월일 string형식으로 변환
+        val startTimeHour = ArrayList<Int>() //게임 시작 hour를 담은 list
+        for (i in 9..22) {
+            startTimeHour.add(i)
+        }
+
+        val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss,SSS")
+        val startTimeList = ArrayList<Long>() //게임 시작시간 list 9~22시까지 각 시간의 정각에 시작
+        for (i in 0 until startTimeHour.size) {
+            val strDate = "$headDate ${startTimeHour[i]}:00:00,000"
+            val date = simpleDateFormat.parse(strDate)
+            startTimeList.add(date!!.time)
+        }
+
+        var stopTimeIndex = 0
+        for (i in 0 until startTimeList.size) {
+            if (time < startTimeList[i]) {
+                stopTimeIndex = i
+                break
+            }
+        }
+        
+        if (stopTimeIndex == 0) stopTimeIndex = startTimeList.size
+        
+        for (i in 0 until stopTimeIndex) {
+            gameTimeList.removeAt(0)
+        }
+        Log.d(TAG, "bindWithView: array : $gameTimeList")
+
+
+        gameDataModel = GameDataModel(participationFee, playMoney, gameTimeList)
+        Log.d(TAG, "recyclerViewSetting: gameDataModel : $gameDataModel")
         b.recyclerViewGameInfo.apply {
             var layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, true)
             this.layoutManager = layoutManager
             setHasFixedSize(true)
             gameInfoAdapter = GameInfoAdapter(this@GameFragment)
-            gameInfoAdapter.addItem(gameDataList)
+            gameInfoAdapter.addItem(gameDataModel)
             adapter = gameInfoAdapter
-
         }
     }
+
 
     @SuppressLint("UseCompatLoadingForDrawables")
     override fun onClick(p0: View?) {
 
     }
 
-    override fun onStart() {
-        super.onStart()
-        Log.d(TAG, "onStart: ")
-    }
 
     private fun gameDateMenuViewPager() {
 
         b.gameDateMenuTab.tabLayoutController { tab ->
 
 //            transaction = childFragmentManager.beginTransaction()
-
+            var participationFee: String = "";
+            var playMoeny: String = "1,000만원"
             when (tab?.position) {
                 0 -> {
-                    Log.d(TAG, "setupLister: today")
-//                    transaction.replace(R.id.fragment_container, GameTodayMenuFragment.getInstance())
+                    participationFee = "없음"
+                    Log.d(TAG, "setupLister: 연습경기")
                 }
                 1 -> {
-                    Log.d(TAG, "setupLister: previous")
-//                    transaction.replace(R.id.fragment_container, GamePreviousMenuFragment.getInstance())
+                    participationFee = "1만원"
+                    Log.d(TAG, "setupLister: 1만원")
                 }
                 2 -> {
+                    participationFee = "10만원"
                     Log.d(TAG, "setupLister: expected")
-//                    transaction.replace(R.id.fragment_container, GameExpectedFragment.getInstance())
                 }
                 3 -> {
+                    participationFee = "50만원"
                     Log.d(TAG, "setupLister: ing")
-//                    transaction.replace(R.id.fragment_container, GameIngMenuFragment.getInstance())
+                }
+                4 -> {
+                    participationFee = "100만원"
+                    Log.d(TAG, "setupLister: ing")
                 }
             }
+            recyclerViewSetting(participationFee, playMoeny)
 
             //addToBackStack(null)을 추가하면 back 버튼이 먹음
 //            transaction.addToBackStack(null)
 //            transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
 //            transaction.commit()
-        }
 
+        }
 
         true
 

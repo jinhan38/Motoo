@@ -54,7 +54,9 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/faqRecyclerView"
             android:layout_width="match_parent"
-            tools:listitem="@layout/faq_recyclerview_item"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:scrollbarSize="5dp"
+            android:scrollbars="vertical"
+            tools:listitem="@layout/faq_recyclerview_item" />
     </LinearLayout>
 </layout>

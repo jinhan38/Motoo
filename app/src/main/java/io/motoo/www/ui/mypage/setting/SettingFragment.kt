@@ -52,7 +52,7 @@ class SettingFragment : Fragment(), View.OnClickListener {
                 Bottom.context.fragmentChange(AlarmFragment.getInstance())
             }
             R.id.frequent_question -> {
-                Bottom.context.fragmentChange(FAQFragment.getInstance())
+                Bottom.context.fragmentChange(FAQFragment())
             }
             R.id.notice_board -> {
                 Bottom.context.fragmentChange(NoticeFragment.getInstance())

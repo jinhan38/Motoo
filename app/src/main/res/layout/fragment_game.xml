@@ -38,17 +38,17 @@
 
                         </FrameLayout>
 
-                            <androidx.viewpager.widget.ViewPager
-                                android:id="@+id/game_top_viewPager"
-                                android:layout_width="match_parent"
-                                android:layout_height="200dp"
-                                android:layout_gravity="top"
-                                android:layout_marginTop="80dp"
-                                android:background="@android:color/transparent"
-                                android:elevation="10dp" />
+                        <androidx.viewpager.widget.ViewPager
+                            android:id="@+id/game_top_viewPager"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:layout_gravity="top"
+                            android:layout_marginTop="80dp"
+                            android:background="@android:color/transparent"
+                            android:elevation="10dp" />
 
-<!--                        </LinearLayout>-->
-                        
+                        <!--                        </LinearLayout>-->
+
                     </FrameLayout>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
@@ -93,8 +93,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:paddingTop="292dp"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:paddingTop="292dp">
 
                         <LinearLayout
                             android:id="@+id/gameDateMenuTabWrap"
@@ -107,10 +107,10 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="42dp"
                                 android:background="@color/white"
-                                android:fontFamily="@font/noto_sans_kr_medium"
+
                                 android:textColor="@color/font_light"
                                 android:textSize="16sp"
-                                android:textStyle="normal"
+                                app:tabMode="scrollable"
                                 app:tabIndicatorColor="@color/primary_blue"
                                 app:tabIndicatorHeight="2dp"
                                 app:tabRippleColor="@android:color/transparent"
@@ -120,7 +120,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/noto_sans_kr_medium"
-                                    android:text="오늘"
+                                    android:text="연습경기"
                                     android:textSize="16sp"
                                     android:textStyle="normal" />
 
@@ -128,7 +128,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/noto_sans_kr_medium"
-                                    android:text="이전"
+                                    android:text="1만원"
                                     android:textSize="16sp"
                                     android:textStyle="normal" />
 
@@ -136,18 +136,23 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/noto_sans_kr_medium"
-                                    android:text="진행예정"
-                                    android:textSize="16sp"
-                                    android:textStyle="normal" />
+                                    android:text="10만원"
+                                    android:textSize="16sp" />
 
                                 <com.google.android.material.tabs.TabItem
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/noto_sans_kr_medium"
-                                    android:text="참가중"
-                                    android:textSize="16sp"
+                                    android:text="50만원"
+                                    android:textSize="16sp"/>
 
-                                    android:textStyle="normal" />
+                                <com.google.android.material.tabs.TabItem
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/noto_sans_kr_medium"
+                                    android:text="100만원"
+                                    android:textSize="16sp"/>
+
                             </com.google.android.material.tabs.TabLayout>
 
                             <View
@@ -160,16 +165,18 @@
                             android:id="@+id/recyclerView_gameInfo"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:background="@color/bg_basic"
                             android:nestedScrollingEnabled="false"
+                            android:paddingHorizontal="10dp"
                             android:scrollbarSize="5dp"
                             android:scrollbars="vertical"
                             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                             tools:listitem="@layout/game_info_recyclerview_item" />
 
-                        
                     </LinearLayout>
                 </FrameLayout>
             </LinearLayout>
         </io.motoo.www.ui.game.GameStickyNewScrollView>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
 </layout>

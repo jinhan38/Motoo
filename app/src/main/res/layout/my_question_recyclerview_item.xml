@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="16dp"
+            android:src="@mipmap/ic_launcher" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="24dp"
+            android:layout_toRightOf="@+id/profile_image"
+            android:paddingLeft="16dp">
+
+            <TextView
+                android:id="@+id/nickName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:includeFontPadding="false"
+                android:text="닉네임"
+                android:textColor="#2e2e2e"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/question_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="24dp"
+                android:fontFamily="sans-serif-medium"
+                android:includeFontPadding="false"
+                android:text="2021.01.14 12:00"
+                android:textColor="#6e7f8d"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/question_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nickName"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="28dp"
+                android:text="문의내용입니다. 문의내용입니다. 문의내용입니다.문의내용입니다.문의내용입니다." />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_basic">
+
+
+        <TextView
+            android:id="@+id/motoo_icon"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_brand_round_23dp"
+            android:fontFamily="@font/lemonmilk_bold"
+            android:gravity="center"
+            android:text="M"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/motoo_icon"
+            android:paddingLeft="16dp"
+            android:paddingTop="25dp"
+            android:paddingRight="24dp"
+            android:paddingBottom="30dp">
+
+            <TextView
+                android:id="@+id/motoo_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lemonmilk_bold"
+                android:includeFontPadding="false"
+                android:text="MOTOO"
+                android:textColor="#403fff"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/answer_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:fontFamily="sans-serif-medium"
+                android:includeFontPadding="false"
+                android:text="2021.01.14 12:00"
+                android:textColor="#6e7f8d"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/answer_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/motoo_text"
+                android:layout_marginTop="9dp"
+                android:text="답변답변답변입니다. 답변답변답변입니다. 답변답변답변입니다. 답변답변답변" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/border_light" />
+
+
+</LinearLayout>

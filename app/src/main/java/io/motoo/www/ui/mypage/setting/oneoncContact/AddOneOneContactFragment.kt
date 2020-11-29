@@ -3,20 +3,24 @@ package io.motoo.www.ui.mypage.setting.oneoncContact
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
+import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.os.Environment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import com.theartofdev.edmodo.cropper.CropImage
 import io.motoo.www.R
 import io.motoo.www.databinding.FragmentAddOneOneContactBinding
-import io.motoo.www.databinding.FragmentSettingBinding
 import io.motoo.www.others.Utils
 import io.motoo.www.others.onMyTextChanged
 import io.motoo.www.ui.Bottom
+import java.io.File
+import java.text.SimpleDateFormat
+import java.util.*
 
 class AddOneOneContactFragment : Fragment() {
 
@@ -78,6 +82,19 @@ class AddOneOneContactFragment : Fragment() {
             val result = CropImage.getActivityResult(data)
             if (resultCode == Activity.RESULT_OK) {
                 val imageUri = result.uri
+
+
+                //나중에 이미지 업로드 처리 할 것
+
+//                var inputStream = requireActivity().contentResolver.openInputStream(imageUri)
+//                var bitmapImage = BitmapFactory.decodeStream(inputStream)
+//                inputStream?.close()
+//
+//                var date = SimpleDateFormat("yyyy_MM_dd_hh_mm").format(Date())
+//                var tempFile = File(Objects.requireNonNull(getEx))
+//
+//                val file = File(context?.getExternalFilesDir(
+//                    Environment.DIRECTORY_PICTURES), albumName)
 
 //                b.circleImageView.setImageURI(imageUri)
 

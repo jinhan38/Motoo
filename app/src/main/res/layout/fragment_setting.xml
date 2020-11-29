@@ -52,6 +52,7 @@
             android:background="@color/border_light" />
 
         <FrameLayout
+            android:id="@+id/profile_edit_button"
             android:layout_width="match_parent"
             android:layout_height="64dp">
 
@@ -66,12 +67,13 @@
                 android:textSize="16sp" />
 
             <ImageButton
-                android:id="@+id/profile_edit_button"
                 android:layout_width="38dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="right|center_vertical"
                 android:layout_marginRight="10dp"
                 android:background="@null"
+                android:clickable="false"
+                android:focusable="false"
                 android:padding="10dp"
                 android:scaleType="centerInside"
                 android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
@@ -84,6 +86,7 @@
         </FrameLayout>
 
         <FrameLayout
+            android:id="@+id/alarm_edit_button"
             android:layout_width="match_parent"
             android:layout_height="64dp">
 
@@ -99,12 +102,13 @@
 
 
             <ImageButton
-                android:id="@+id/alarm_edit_button"
                 android:layout_width="38dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="right|center_vertical"
                 android:layout_marginRight="10dp"
                 android:background="@null"
+                android:clickable="false"
+                android:focusable="false"
                 android:padding="10dp"
                 android:scaleType="centerInside"
                 android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
@@ -117,6 +121,7 @@
         </FrameLayout>
 
         <FrameLayout
+            android:id="@+id/frequent_question"
             android:layout_width="match_parent"
             android:layout_height="64dp">
 
@@ -132,12 +137,13 @@
 
 
             <ImageButton
-                android:id="@+id/frequent_question"
                 android:layout_width="38dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="right|center_vertical"
                 android:layout_marginRight="10dp"
                 android:background="@null"
+                android:clickable="false"
+                android:focusable="false"
                 android:padding="10dp"
                 android:scaleType="centerInside"
                 android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
@@ -150,6 +156,7 @@
         </FrameLayout>
 
         <FrameLayout
+            android:id="@+id/notice_board"
             android:layout_width="match_parent"
             android:layout_height="64dp">
 
@@ -165,12 +172,13 @@
 
 
             <ImageButton
-                android:id="@+id/notice_board"
                 android:layout_width="38dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="right|center_vertical"
                 android:layout_marginRight="10dp"
                 android:background="@null"
+                android:clickable="false"
+                android:focusable="false"
                 android:padding="10dp"
                 android:scaleType="centerInside"
                 android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
@@ -183,6 +191,7 @@
         </FrameLayout>
 
         <FrameLayout
+            android:id="@+id/one_one_contact"
             android:layout_width="match_parent"
             android:layout_height="64dp">
 
@@ -198,12 +207,13 @@
 
 
             <ImageButton
-                android:id="@+id/one_one_contact"
                 android:layout_width="38dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="right|center_vertical"
                 android:layout_marginRight="10dp"
                 android:background="@null"
+                android:clickable="false"
+                android:focusable="false"
                 android:padding="10dp"
                 android:scaleType="centerInside"
                 android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
@@ -216,6 +226,7 @@
         </FrameLayout>
 
         <FrameLayout
+            android:id="@+id/improveAndSuggestion"
             android:layout_width="match_parent"
             android:layout_height="64dp">
 
@@ -231,12 +242,13 @@
 
 
             <ImageButton
-                android:id="@+id/improveAndSuggestion"
                 android:layout_width="38dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="right|center_vertical"
                 android:layout_marginRight="10dp"
                 android:background="@null"
+                android:clickable="false"
+                android:focusable="false"
                 android:padding="10dp"
                 android:scaleType="centerInside"
                 android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
@@ -249,6 +261,7 @@
         </FrameLayout>
 
         <FrameLayout
+            android:id="@+id/inviteAndGetCash"
             android:layout_width="match_parent"
             android:layout_height="64dp">
 
@@ -265,12 +278,13 @@
 
 
             <ImageButton
-                android:id="@+id/inviteAndGetCash"
                 android:layout_width="38dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="right|center_vertical"
                 android:layout_marginRight="10dp"
                 android:background="@null"
+                android:clickable="false"
+                android:focusable="false"
                 android:padding="10dp"
                 android:scaleType="centerInside"
                 android:src="@drawable/ic_baseline_arrow_forward_ios_24" />

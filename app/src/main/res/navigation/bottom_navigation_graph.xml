@@ -61,11 +61,11 @@
             android:id="@+id/action_myPageFragment_to_gameRecordFragment"
             app:destination="@id/gameRecordFragment" />
         <action
-            android:id="@+id/action_myPageFragment_to_myPageWithdrawMoneyFragment"
-            app:destination="@id/myPageWithdrawMoneyFragment" />
-        <action
             android:id="@+id/action_myPageFragment_to_settingFragment"
             app:destination="@id/settingFragment" />
+        <action
+            android:id="@+id/action_myPageFragment_to_myPageWithdrawMoneyFragment"
+            app:destination="@id/myPageWithdrawMoneyFragment" />
     </fragment>
     <fragment
         android:id="@+id/gameRecordFragment"
@@ -131,5 +131,28 @@
         android:id="@+id/oneOneContactFragment"
         android:name="io.motoo.www.ui.mypage.setting.oneoncContact.OneOneContactFragment"
         android:label="fragment_one_one_contact"
-        tools:layout="@layout/fragment_one_one_contact" />
+        tools:layout="@layout/fragment_one_one_contact" >
+        <action
+            android:id="@+id/action_oneOneContactFragment_to_addOneOneContactFragment"
+            app:destination="@id/addOneOneContactFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addOneOneContactFragment"
+        android:name="io.motoo.www.ui.mypage.setting.oneoncContact.AddOneOneContactFragment"
+        android:label="fragment_add_one_one_contact"
+        tools:layout="@layout/fragment_add_one_one_contact" >
+        <action
+            android:id="@+id/action_addOneOneContactFragment_to_viewMyQuestionFragment"
+            app:destination="@id/viewMyQuestionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewMyQuestionFragment"
+        android:name="io.motoo.www.ui.mypage.setting.oneoncContact.ViewMyQuestionFragment"
+        android:label="fragment_view_my_question"
+        tools:layout="@layout/fragment_view_my_question" />
+    <fragment
+        android:id="@+id/marketNoEventDataFragment"
+        android:name="io.motoo.www.ui.market.MarketNoEventDataFragment"
+        android:label="fragment_market_no_event_data"
+        tools:layout="@layout/fragment_market_no_event_data" />
 </navigation>

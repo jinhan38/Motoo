@@ -46,9 +46,12 @@ class OneOneContactFragment : Fragment() {
         b.oneOneAdd.setOnClickListener {
             Bottom.context.fragmentChange(AddOneOneContactFragment.getInstance())
         }
+
+        b.viewMyQuestion.setOnClickListener {
+            Bottom.context.fragmentChange(ViewMyQuestionFragment.getInstance())
+        }
         return b.root
     }
-
 
     override fun onStart() {
         super.onStart()
