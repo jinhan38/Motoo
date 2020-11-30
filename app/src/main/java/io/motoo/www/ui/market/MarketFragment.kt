@@ -5,8 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import io.motoo.www.R
+import io.motoo.www.databinding.FragmentMarketBinding
+import io.motoo.www.ui.Bottom
 import io.motoo.www.ui.game.GameFragment
+import io.motoo.www.ui.market.addEvent.AddEventFragment
 
 class MarketFragment : Fragment() {
 
@@ -23,13 +27,20 @@ class MarketFragment : Fragment() {
             }
     }
 
+    lateinit var b : FragmentMarketBinding
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_market, container, false)
+        b = DataBindingUtil.inflate(inflater, R.layout.fragment_market, container, false)
+
+        
+        b.moveToAddEvent.setOnClickListener {
+            Bottom.context.fragmentChange(AddEventFragment())
+        }
+        return b.root
     }
 
 }
