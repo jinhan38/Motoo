@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="72dp"
     android:orientation="horizontal"
@@ -16,23 +17,23 @@
             android:layout_height="32dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="31dp"
-            android:background="#f1f1f1" >
+            android:background="#f1f1f1">
 
             <View
-                android:layout_gravity="center"
+                android:id="@+id/stockBarRect"
                 android:layout_width="match_parent"
                 android:layout_height="8dp"
-                android:background="@color/stock_bar_red"
-                android:id="@+id/stockBarRect"/>
+                android:layout_gravity="center"
+                android:background="@color/stock_bar_red" />
 
             <View
-                android:layout_gravity="center"
+                android:id="@+id/stockBarLine"
                 android:layout_width="1dp"
                 android:layout_height="12dp"
-                android:background="@color/stock_bar_red"
-                android:id="@+id/stockBarLine"/>
+                android:layout_gravity="center"
+                android:background="@color/stock_bar_red" />
 
-            
+
         </FrameLayout>
 
         <LinearLayout
@@ -54,8 +55,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif"
                 android:layout_marginTop="4dp"
+                android:fontFamily="sans-serif"
                 android:text="KOSPI  005930"
                 android:textColor="#6e7f8d"
                 android:textSize="12sp"
@@ -66,6 +67,72 @@
 
 
     </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="60"
+        android:gravity="end"
+        android:orientation="horizontal"
+        android:weightSum="90">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="30">
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="40"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="57,600"
+                android:textColor="@color/red"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_up"
+                android:layout_marginLeft="4dp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView14"
+                app:layout_constraintStart_toEndOf="@+id/textView14"
+                app:layout_constraintTop_toTopOf="@+id/textView14" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="33"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="800"
+            android:textColor="@color/red"
+            android:textSize="12sp" />
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="26"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center|start"
+            android:includeFontPadding="false"
+            android:text="1.50%"
+            android:textColor="@color/red"
+            android:textSize="12sp" />
+
+    </LinearLayout>
 
 
 </LinearLayout>

@@ -30,12 +30,10 @@
         <action
             android:id="@+id/action_marketFragment_to_addEventFragment"
             app:destination="@id/addEventFragment" />
+        <action
+            android:id="@+id/action_marketFragment_to_myMarketListFragment2"
+            app:destination="@id/myMarketListFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/portfolioFragment"
-        android:name="io.motoo.www.ui.portfolio.PortfolioFragment"
-        android:label="fragment_portfolio"
-        tools:layout="@layout/fragment_portfolio" />
     <fragment
         android:id="@+id/firstGameEventFragment"
         android:name="io.motoo.www.ui.game.eventViewPager.FirstGameEventFragment"
@@ -159,4 +157,9 @@
         android:name="io.motoo.www.ui.market.addEvent.AddEventFragment"
         android:label="fragment_add_event"
         tools:layout="@layout/fragment_add_event" />
+    <fragment
+        android:id="@+id/myMarketListFragment"
+        android:name="io.motoo.www.ui.market.MyMarketListFragment"
+        android:label="fragment_my_market_list"
+        tools:layout="@layout/fragment_my_market_list" />
 </navigation>
