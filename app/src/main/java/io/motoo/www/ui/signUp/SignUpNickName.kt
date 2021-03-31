@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
+import androidx.navigation.fragment.findNavController
 import io.motoo.www.R
 import kotlinx.android.synthetic.main.fragment_sign_up_nickname.view.*
 
@@ -21,8 +22,11 @@ class SignUpNickName : Fragment() {
         activity?.window!!.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)
         v = inflater.inflate(R.layout.fragment_sign_up_nickname, container, false)
 
+        v.btnComplete.setOnClickListener {
+            activity?.finish()
+        }
         v.back_button.setOnClickListener {
-            activity?.onBackPressed()
+            findNavController().popBackStack()
         }
         return v
     }

@@ -1,5 +1,6 @@
 package io.motoo.www.others
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.ContentValues
 import android.content.Context
@@ -19,8 +20,8 @@ import androidx.core.view.ViewCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.commit
+import io.motoo.www.BuildConfig
 import io.motoo.www.R
-import kotlinx.android.synthetic.main.fragment_login_start.view.*
 import java.text.DecimalFormat
 import java.util.*
 import java.util.regex.Pattern
@@ -28,7 +29,24 @@ import java.util.regex.Pattern
 
 class Utils {
 
+
+    @SuppressLint("NewApi")
     companion object {
+
+        fun getBaseAPIUrl(): String {
+            val type = BuildConfig.BUILD_TYPE
+            var url = ""
+
+            if (type == "DEV") {
+                url = "http://www.rn00n.me/docs/index.html"
+            } else {
+                url = "http://www.rn00n.me/docs/index.html"
+            }
+
+            return url
+        }
+
+
         var fragmentStack: Stack<Fragment>? = null
 
         private const val TAG = "Utils"
@@ -141,24 +159,25 @@ class Utils {
             return "$formattedStringPrice"
         }
 
-        fun editTextUnderLineBlue(activity : Activity, editText : EditText){
+        fun editTextUnderLineBlue(activity: Activity, editText: EditText) {
             val colorStateListBlue =
                 ColorStateList.valueOf(activity.resources.getColor(R.color.primary_blue, null))
             ViewCompat.setBackgroundTintList(editText, colorStateListBlue)
         }
 
 
-fun editTextUnderLineRed(activity : Activity, editText : EditText){
-    val colorStateListRed =
-        ColorStateList.valueOf(activity.resources.getColor(R.color.red, null))
-    ViewCompat.setBackgroundTintList(editText, colorStateListRed)
-}
+        fun editTextUnderLineRed(activity: Activity, editText: EditText) {
+            val colorStateListRed =
+                ColorStateList.valueOf(activity.resources.getColor(R.color.red, null))
+            ViewCompat.setBackgroundTintList(editText, colorStateListRed)
+        }
 
-        fun editTextUnderLineGray(activity : Activity, editText : EditText){
+        fun editTextUnderLineGray(activity: Activity, editText: EditText) {
             val colorStateListRed =
                 ColorStateList.valueOf(activity.resources.getColor(R.color.border_dark, null))
             ViewCompat.setBackgroundTintList(editText, colorStateListRed)
         }
+
 
 
     }

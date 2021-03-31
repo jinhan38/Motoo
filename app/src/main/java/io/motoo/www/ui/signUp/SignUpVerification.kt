@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import io.motoo.www.R
 import io.motoo.www.others.replaceFragment
 import kotlinx.android.synthetic.main.fragment_sign_up_verification.view.*
@@ -25,11 +26,12 @@ class SignUpVerification : Fragment() {
         activity?.window!!.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)
 
         v.next.setOnClickListener {
-            SignUpNickName().replaceFragment(R.id.fragment, requireActivity())
+            findNavController().navigate(R.id.action_verification_to_signUpFinish)
+//            SignUpNickName().replaceFragment(R.id.fragment, requireActivity())
         }
 
         v.back_button.setOnClickListener {
-            activity?.onBackPressed()
+            findNavController().popBackStack()
         }
 
         

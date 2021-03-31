@@ -1,5 +1,6 @@
 package io.motoo.www.ui.signUp
 
+import android.annotation.SuppressLint
 import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
@@ -9,8 +10,8 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import io.motoo.www.R
-import io.motoo.www.others.replaceFragment
 import kotlinx.android.synthetic.main.fragment_sign_up_terms.view.*
 
 class SignUpTerms : Fragment(), View.OnClickListener {
@@ -73,10 +74,12 @@ class SignUpTerms : Fragment(), View.OnClickListener {
 
     private fun moveToNext() {
 
+//        findNavController().popBackStack()
 
         if (v.checkbox_service.isChecked && v.checkbox_privacy.isChecked) {
 
-            SignUpProfile().replaceFragment(R.id.fragment, requireActivity())
+            findNavController().navigate(R.id.action_termsFragment_to_signUpFragment)
+//            SignUpProfile().replaceFragment(R.id.fragment, requireActivity())
             
         } else {
             Toast.makeText(activity, "필수 약관에 동의해주시기 바랍니다.", Toast.LENGTH_SHORT).show()
@@ -94,6 +97,7 @@ class SignUpTerms : Fragment(), View.OnClickListener {
         }
     }
 
+    @SuppressLint("NewApi")
     private fun nextButtonOpen() {
         v.button_next.apply {
 //            setTextColor(resources.getColor(R.color.white, null))
@@ -102,6 +106,7 @@ class SignUpTerms : Fragment(), View.OnClickListener {
         }
     }
 
+    @SuppressLint("NewApi")
     private fun nextButtonClose() {
         v.button_next.apply {
 //            setTextColor(resources.getColor(R.color.black, null))

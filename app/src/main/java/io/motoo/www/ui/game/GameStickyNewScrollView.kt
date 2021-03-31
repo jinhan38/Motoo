@@ -26,6 +26,10 @@ class GameStickyNewScrollView :  NestedScrollView, ViewTreeObserver.OnGlobalLayo
         viewTreeObserver.addOnGlobalLayoutListener(this)
     }
 
+    private var mIsHeaderSticky = false
+
+    private var mHeaderInitPosition = 0f
+
     var header: View? = null
         set(value) {
             field = value
@@ -42,9 +46,6 @@ class GameStickyNewScrollView :  NestedScrollView, ViewTreeObserver.OnGlobalLayo
     var stickListener: (View) -> Unit = {}
     var freeListener: (View) -> Unit = {}
 
-    private var mIsHeaderSticky = false
-
-    private var mHeaderInitPosition = 0f
 
     override fun onGlobalLayout() {
         mHeaderInitPosition = header?.top?.toFloat() ?: 0f

@@ -11,10 +11,10 @@
         tools:layout="@layout/fragment_sign_up_terms">
         <action
             android:id="@+id/action_termsFragment_to_signUpFragment"
-            app:destination="@id/signUpFragment" />
+            app:destination="@id/signUpProfile" />
     </fragment>
     <fragment
-        android:id="@+id/signUpFragment"
+        android:id="@+id/signUpProfile"
         android:name="io.motoo.www.ui.signUp.SignUpProfile"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up_profile">
@@ -44,6 +44,6 @@
             app:destination="@id/signUpFinish" />
         <action
             android:id="@+id/action_verification_to_signUpFragment"
-            app:destination="@id/signUpFragment" />
+            app:destination="@id/signUpProfile" />
     </fragment>
 </navigation>
